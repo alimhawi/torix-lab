@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F5F7FA;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-teal-600 active:bg-teal-700 transition-all duration-200 shadow-teal
+           hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-xl
+           border border-slate-200 hover:border-teal-300 hover:text-teal-600 transition-all duration-200 shadow-soft
+           hover:shadow-card hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-slate-100 p-6;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 cursor-pointer;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-teal {
+    @apply badge bg-teal-50 text-teal-700;
+  }
+
+  .badge-blue {
+    @apply badge bg-blue-50 text-blue-700;
+  }
+
+  .badge-amber {
+    @apply badge bg-amber-50 text-amber-700;
+  }
+
+  .badge-rose {
+    @apply badge bg-rose-50 text-rose-700;
+  }
+
+  .badge-violet {
+    @apply badge bg-violet-50 text-violet-700;
+  }
+
+  .section {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900
+           placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30
+           focus:border-teal-400 transition-all duration-200 text-sm;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full bg-slate-100 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Ring focus visible */
+*:focus-visible {
+  outline: 2px solid #14B8A6;
+  outline-offset: 2px;
+}
