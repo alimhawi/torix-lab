@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
-  calcBMI, bmiCategory, calcBMR, calcTDEE, calcFFMI,
+  calcBMI, bmiCategory, calcBMR, calcTDEE, calcFFMIAdvanced,
   calcIdealWeight, calcHydration, calcProtein, getCalorieGoal
 } from '@/lib/calculations';
-import { ArrowRight, User, Ruler, Weight, Activity, Target, ChevronRight, Download } from 'lucide-react';
+import { ArrowRight, User, Ruler, Weight, Activity, Target, ChevronRight } from 'lucide-react';
 
 type FormData = {
   age: string;
@@ -160,7 +160,11 @@ export default function Analysis() {
     const bmi = extractNumber(calcBMI(weight, height));
     const bmr = extractNumber(calcBMR(weight, height, age, f.gender));
     const tdee = extractNumber(calcTDEE(bmr, f.activityLevel));
-    const ffmi = extractNumber(calcFFMI(weight, height));
+    
+    // Using Mode B (Boer LBM Equation) for automated analysis
+    const ffmiRes = calcFFMIAdvanced(weight, height, f.gender);
+    const ffmi = extractNumber(ffmiRes.ffmi);
+    
     const idealWeight = extractNumber(calcIdealWeight(height, f.gender));
     const hydration = extractNumber(calcHydration(weight, f.activityLevel));
     const protein = extractNumber(calcProtein(weight, f.goal, f.activityLevel));
@@ -169,7 +173,7 @@ export default function Analysis() {
     const bmiCat = bmiCategory(bmi);
 
     return {
-      bmi, bmr, tdee, ffmi, idealWeight, hydration, protein, calories,
+      bmi, bmr, tdee, ffmi, ffmiMethod: ffmiRes.method, idealWeight, hydration, protein, calories,
       perfScore, bmiCat, age, height, weight, goal: f.goal,
       activityLevel: f.activityLevel, gender: f.gender,
     };
@@ -301,7 +305,7 @@ export default function Analysis() {
                   results.perfScore >= 50 ? 'Fair Performance Profile' : 'Needs Improvement'}
               </h2>
               <p className="text-slate-500 text-sm">
-                Your score is evidence-based, derived from BMI, FFMI, activity level, nutritional targets (protein and calories), and hydration consistency. Focus on your personalized recommendations below.
+                Your score is evidence-based, derived from BMI (WHO Classification), Estimated FFMI (Boer Equation), activity level, nutritional targets, and hydration consistency.
               </p>
             </div>
           </div>
@@ -310,15 +314,15 @@ export default function Analysis() {
             <h2 className="text-lg font-semibold text-slate-900 mb-4">Body Composition</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               <MetricCard label="BMI" value={results.bmi} unit="kg/m²" sub={results.bmiCat.label} color="teal" />
-              <MetricCard label="FFMI" value={results.ffmi} unit="kg/m²" sub="Fat-Free Mass Index" color="violet" />
+              <MetricCard label="Estimated FFMI" value={results.ffmi} unit="kg/m²" sub="Boer Lean Body Mass Equation" color="violet" />
             </div>
           </div>
 
           <div>
             <h2 className="text-lg font-semibold text-slate-900 mb-4">Energy & Nutrition</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              <MetricCard label="BMR" value={Math.round(results.bmr)} unit="kcal/day" sub="Resting metabolic rate" color="amber" />
-              <MetricCard label="TDEE" value={Math.round(results.tdee)} unit="kcal/day" sub="Total daily expenditure" color="teal" />
+              <MetricCard label="BMR" value={Math.round(results.bmr)} unit="kcal/day" sub="Mifflin-St Jeor Equation" color="amber" />
+              <MetricCard label="TDEE" value={Math.round(results.tdee)} unit="kcal/day" sub="Mifflin-St Jeor + Activity Multipliers" color="teal" />
               <MetricCard label="Calorie Goal" value={Math.round(results.calories)} unit="kcal/day" sub={goalLabels[results.goal]} color="blue" />
               <MetricCard label="Protein Target" value={Math.round(results.protein)} unit="g/day" sub={`${(results.protein / results.weight).toFixed(1)}g/kg/day`} color="rose" />
             </div>
@@ -327,8 +331,8 @@ export default function Analysis() {
           <div>
             <h2 className="text-lg font-semibold text-slate-900 mb-4">Fitness Metrics</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              <MetricCard label="Ideal Weight" value={results.idealWeight} unit="kg" sub="Devine formula" color="green" />
-              <MetricCard label="Hydration" value={results.hydration} unit="L/day" sub="Daily water target" color="blue" />
+              <MetricCard label="Estimated Ideal Weight" value={results.idealWeight} unit="kg" sub="Devine Formula" color="green" />
+              <MetricCard label="Hydration" value={results.hydration} unit="L/day" sub="General daily hydration estimate" color="blue" />
             </div>
           </div>
 
@@ -336,9 +340,9 @@ export default function Analysis() {
             <h2 className="text-lg font-semibold text-slate-900 mb-5">Personalized Recommendations</h2>
             <div className="space-y-3">
               {[
-                results.bmi > 25 && `Your BMI is ${results.bmi.toFixed(1)} — working toward a BMI of 22-23 would improve your performance score significantly.`,
+                results.bmi > 25 && `Your BMI is ${results.bmi.toFixed(1)} (WHO Classification) — working toward a BMI of 18.5–24.9 would improve your performance score.`,
                 `Target ${Math.round(results.protein)}g protein daily spread across 3-4 meals (${(results.protein / results.weight).toFixed(1)}g/kg/day) to support your ${goalLabels[results.goal].toLowerCase()} goal.`,
-                `Drink at least ${results.hydration.toFixed(1)}L of water daily — increase this on training days.`,
+                `Drink at least ${results.hydration.toFixed(1)}L of water daily (general daily hydration estimate) — increase this on training days.`,
                 results.goal === 'weight_loss' && `A deficit of 500 kcal/day puts you at ${Math.round(results.calories)} kcal — expect approximately 0.5kg of fat loss per week.`,
                 results.goal === 'muscle_gain' && `A surplus of 300 kcal puts you at ${Math.round(results.calories)} kcal — combine with progressive overload training for optimal muscle gain.`,
               ].filter(Boolean).map((rec, i) => (
@@ -433,7 +437,7 @@ export default function Analysis() {
           <div className="mt-8 p-5 bg-teal-50 rounded-2xl border border-teal-100">
             <p className="text-xs font-semibold text-teal-700 mb-3 uppercase tracking-wider">Your report includes</p>
             <div className="grid grid-cols-2 gap-2">
-              {['BMI & Category', 'BMR', 'TDEE', 'FFMI', 'Calorie Target', 'Protein Target', 'Hydration Goal', 'Ideal Weight', 'Performance Score'].map((item) => (
+              {['BMI & WHO Class', 'BMR (Mifflin-St Jeor)', 'TDEE', 'Estimated FFMI (Boer)', 'Calorie Target', 'Protein Target', 'Hydration Goal', 'Estimated Ideal Weight', 'Performance Score'].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-xs text-teal-800">
                   <div className="w-1.5 h-1.5 bg-teal-400 rounded-full flex-shrink-0" />
                   {item}
