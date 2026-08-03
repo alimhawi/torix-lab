@@ -1,312 +1,408 @@
-import { Exercise } from './types';
+export interface Exercise {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  primaryMuscles: string[];
+  image: string;
+  equipment: string;
+  description: string;
+  instructions: string[];
+  commonMistakes: string[];
+  progressions: string[];
+  regressions: string[];
+}
 
 export const rehabilitationExercises: Exercise[] = [
   {
-    id: '1',
-    name: 'Wall Forearm Slides',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Serratus Anterior', 'Shoulders', 'Upper Back'],
-    equipment: 'Wall',
-    description: 'A fundamental scapular upward rotation drill that strengthens the serratus anterior and reinforces proper shoulder blade tracking.',
-    instructions: [
-      'Stand facing a wall with forearms resting vertically against it, elbows bent at 90 degrees',
-      'Step one foot slightly forward and gently press forearms into the wall to engage shoulder blades',
-      'Slowly slide forearms upward along the wall until arms form a high "V" shape',
-      'Pause briefly at the top without arching lower back, then return under control'
-    ],
-    commonMistakes: [
-      'Arching lower back to gain artificial overhead elevation',
-      'Shrugging shoulders upward into ears during the upward slide',
-      'Lifting forearms away from the wall during movement'
-    ],
-    progressions: ['Wall Forearm Slide with Liftoff'],
-    regressions: ['Seated Scapular Shrugs']
-  },
-  {
-    id: '2',
-    name: 'Prone Scapular Y-Raise',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Lower Trapezius', 'Shoulders', 'Upper Back'],
-    equipment: 'Floor',
-    description: 'An effective lying activation exercise targeting the lower trapezius to improve scapular depression and overhead shoulder control.',
-    instructions: [
-      'Lie face down on the floor with forehead resting on a small folded towel',
-      'Extend arms overhead at a 45-degree angle in a "Y" position, thumbs pointing up toward ceiling',
-      'Depress shoulder blades down toward back pockets, then lift arms a few inches off floor',
-      'Hold peak position for 2 seconds while breathing smoothly, then lower back down'
-    ],
-    commonMistakes: [
-      'Lifting head or arching lower back to force arm height',
-      'Shrugging upper trapezius muscles into neck',
-      'Pointing thumbs downward or outward instead of toward ceiling'
-    ],
-    progressions: ['Standing Hinge Y-Raise'],
-    regressions: ['Supported Wall Y-Hold']
-  },
-  {
-    id: '3',
-    name: 'Side-Lying Clamshell',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Gluteus Medius', 'Hip Rotators'],
-    equipment: 'Floor',
-    description: 'A targeted hip exercise that isolates the gluteus medius to enhance pelvic stability during walking and single-leg support.',
-    instructions: [
-      'Lie on your side with hips stacked, knees bent at 90 degrees, and feet aligned with spine',
-      'Keep feet pressed together while slowly rotating top knee upward toward ceiling',
-      'Squeeze upper glute firmly at peak opening without rolling hips or pelvis backward',
-      'Lower knee back to starting position smoothly and repeat'
-    ],
-    commonMistakes: [
-      'Rolling upper hip backward to cheat rotational range',
-      'Lifting feet apart during knee abduction',
-      'Rushing repetitions without static contraction at top'
-    ],
-    progressions: ['Side-Lying Clamshell with Feet Elevated'],
-    regressions: ['Supine Isometric Hip Abduction']
-  },
-  {
-    id: '4',
-    name: 'Supine Glute Bridge',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Gluteus Maximus', 'Hamstrings', 'Core'],
-    equipment: 'Floor',
-    description: 'A foundational lumbo-pelvic stabilization drill that activates gluteal muscles while supporting healthy low-back alignment.',
-    instructions: [
-      'Lie on your back with knees bent, feet flat on floor hip-width apart, and arms at sides',
-      'Posteriorly tilt pelvis to press lower back flat against floor',
-      'Drive through heels to lift hips until knees, hips, and shoulders form a straight diagonal line',
-      'Squeeze glutes at peak for 2 seconds, then lower under control'
-    ],
-    commonMistakes: [
-      'Hyperextending lower back at top of bridge instead of extending hips',
-      'Pushing off forefeet/toes instead of driving through heels',
-      'Allowing knees to cave inward during lift'
-    ],
-    progressions: ['Single-Leg Glute Bridge Hold'],
-    regressions: ['Isometric Glute Squeeze']
-  },
-  {
-    id: '5',
-    name: 'Towel Terminal Knee Extension',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Quadriceps', 'Vastus Medialis'],
-    equipment: 'Towel',
-    description: 'A gentle knee rehabilitation drill utilizing a rolled towel to activate the vastus medialis oblique (VMO) into full extension.',
-    instructions: [
-      'Sit on floor with legs extended and place a tightly rolled towel beneath working knee',
-      'Relax heel on floor and focus on thigh muscles of working leg',
-      'Contract quadriceps forcefully to press back of knee down into towel and lift heel slightly off floor',
-      'Hold quadriceps contraction for 5 seconds, then slowly release'
-    ],
-    commonMistakes: [
-      'Lifting thigh off floor instead of driving knee downward into towel',
-      'Holding breath during isometric muscle contraction',
-      'Rushing isometric hold time'
-    ],
-    progressions: ['Standing Bodyweight Terminal Knee Extension'],
-    regressions: ['Quad Sets (No Towel)']
-  },
-  {
-    id: '6',
+    id: 'chair-sit-to-stand',
     name: 'Chair Sit-to-Stand',
+    slug: 'chair-sit-to-stand',
     category: 'Rehabilitation',
     difficulty: 'Beginner',
-    primaryMuscles: ['Quadriceps', 'Glutes', 'Core'],
+    primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings'],
+    image: '/images/exercises/rehabilitation/chair-sit-to-stand.webp',
     equipment: 'Chair',
-    description: 'A vital functional rehabilitation pattern that rebuilds lower-body strength, joint alignment, and movement confidence.',
+    description: 'A functional lower-body strengthening exercise ideal for rebuilding leg strength and improving transitional mobility.',
     instructions: [
-      'Sit near front edge of a sturdy chair with feet hip-width apart and heels flat',
-      'Lean torso slightly forward from hips, keep chest upright, and press through heels to stand fully',
-      'Squeeze glutes at top of standing position',
-      'Hinge hips back and slowly lower body back down to touch chair seat lightly under control'
+      'Sit near the front of a sturdy chair with feet flat on the floor shoulder-width apart.',
+      'Lean your torso slightly forward from the hips, engaging your core and glutes.',
+      'Push through your heels to stand up fully to an upright position.',
+      'Slowly lower your hips back down to the chair with control.'
     ],
     commonMistakes: [
-      'Allowing knees to cave inward (valgus tracking) during rise or descent',
-      'Using momentum or rocking excessively to stand up',
-      'Plop-dropping quickly onto chair seat'
+      'Using momentum from the upper body',
+      'Knees caving inward'
     ],
-    progressions: ['Step-Up onto Low Stair'],
-    regressions: ['Arm-Assisted Chair Sit-to-Stand']
+    progressions: [
+      'Bodyweight Squat',
+      'Goblet Squat'
+    ],
+    regressions: [
+      'Assisted Sit-to-Stand using arm rests',
+      'Higher surface sit-to-stand'
+    ]
   },
   {
-    id: '7',
+    id: 'controlled-stair-step-down',
     name: 'Controlled Stair Step-Down',
-    category: 'Rehabilitation',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Quadriceps', 'Glutes', 'Ankles'],
-    equipment: 'Stairs',
-    description: 'An eccentric quadriceps and knee stability drill that improves patellofemoral tracking and force absorption during step control.',
-    instructions: [
-      'Stand on bottom stair tread with non-working foot suspended off step edge',
-      'Keep hips level and hands on wall or railing for light balance if needed',
-      'Slowly bend stance knee to lower suspended heel down to touch floor softly',
-      'Push through stance heel to return to starting position without bouncing off floor'
-    ],
-    commonMistakes: [
-      'Allowing stance knee to buckle inward during knee flexion',
-      'Dropping non-working foot quickly onto floor',
-      'Hicking hip up on suspended side'
-    ],
-    progressions: ['Single-Leg Step-Down from Higher Step'],
-    regressions: ['Flat Floor Single-Leg Mini-Squat']
-  },
-  {
-    id: '8',
-    name: 'Single-Leg Balance',
+    slug: 'controlled-stair-step-down',
     category: 'Rehabilitation',
     difficulty: 'Beginner',
-    primaryMuscles: ['Ankles', 'Gluteus Medius', 'Core'],
-    equipment: 'Floor',
-    description: 'A balance drill that enhances ankle proprioception, lower-leg stabilizer firing, and static joint alignment.',
+    primaryMuscles: ['Quadriceps', 'Glutes', 'Stabilizers'],
+    image: '/images/exercises/rehabilitation/controlled-stair-step-down.webp',
+    equipment: 'Step / Stair',
+    description: 'A targeted eccentric control exercise designed to improve knee stability, quad strength, and lower limb alignment during descent.',
     instructions: [
-      'Stand tall near a wall or chair for safety with feet hip-width apart',
-      'Shift body weight onto one leg while lifting opposite foot a few inches off floor',
-      'Keep stance knee soft (unlocked) and maintain square hips and tall posture',
-      'Hold position for target time while making small automatic adjustments through ankle'
+      'Stand on a step or low platform with one foot resting lightly beside the edge off the step.',
+      'Slowly lower the suspended foot toward the ground by bending the stance knee with controlled deceleration.',
+      'Lightly touch the heel to the floor without shifting full weight onto it.',
+      'Push back up to the starting standing position.'
     ],
     commonMistakes: [
-      'Locking out stance knee completely',
-      'Dropping non-stance hip downward',
-      'Gripping floor excessively with toes'
+      'Dropping down too quickly without eccentric control',
+      'Allowing the knee to collapse inward'
     ],
-    progressions: ['Single-Leg Balance with Eyes Closed'],
-    regressions: ['Tandem Balance Stance']
+    progressions: [
+      'Higher step step-down',
+      'Single-leg squat'
+    ],
+    regressions: [
+      'Shallow step-down with hand support'
+    ]
   },
   {
-    id: '9',
-    name: 'Tandem Heel-to-Toe Walk',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Ankles', 'Core', 'Calves'],
-    equipment: 'Floor',
-    description: 'A dynamic narrow-base balance drill that trains postural control, ankle micro-adjustments, and movement coordination.',
-    instructions: [
-      'Stand tall near a wall for safety and place one foot directly in front of other, heel touching toe',
-      'Fix gaze on a steady focal point ahead and brace core softly',
-      'Step trailing foot forward, placing heel directly against toes of front foot',
-      'Continue stepping forward in a straight narrow line under strict speed control'
-    ],
-    commonMistakes: [
-      'Looking down at feet continuously instead of keeping head high',
-      'Taking wide steps instead of placing feet in a tight heel-to-toe line',
-      'Rushing gait speed to avoid losing balance'
-    ],
-    progressions: ['Tandem Heel-to-Toe Backward Walk'],
-    regressions: ['Static Tandem Hold']
-  },
-  {
-    id: '10',
-    name: 'Heel-and-Toe Walks',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Anterior Tibialis', 'Calves', 'Ankles'],
-    equipment: 'Floor',
-    description: 'A lower-leg conditioning drill strengthening the shins and ankles to support healthy foot mechanics and lower-leg endurance.',
-    instructions: [
-      'Lift forefeet off floor and walk forward on heels for 15-20 paces, keeping toes dorsiflexed',
-      'Turn around, rise high onto balls of feet, and walk backward or forward on toes',
-      'Keep knees soft and posture tall throughout both phases',
-      'Maintain steady speed and controlled ankle positioning'
-    ],
-    commonMistakes: [
-      'Allowing forefeet to drop toward floor during heel walks',
-      'Bending knees heavily into a squat position',
-      'Leaning torso backward while on heels'
-    ],
-    progressions: ['Single-Leg Heel Lift Hold'],
-    regressions: ['Seated Toe and Heel Raises']
-  },
-  {
-    id: '11',
-    name: 'Supine Pelvic Tilt with March',
-    category: 'Rehabilitation',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Deep Core', 'Transverse Abdominis', 'Hip Flexors'],
-    equipment: 'Floor',
-    description: 'A low-back friendly stabilization exercise that teaches deep abdominal bracing while maintaining pelvic position during limb movement.',
-    instructions: [
-      'Lie face up with knees bent and feet flat on floor',
-      'Exhale slowly and draw belly button toward spine, pressing lower back flat against floor',
-      'Maintain flat back contact while lifting one foot 2-3 inches off floor into a march',
-      'Lower foot back down gently and alternate sides without letting lumbar spine arch'
-    ],
-    commonMistakes: [
-      'Allowing lower back to lift off floor during foot lift',
-      'Holding breath instead of keeping diaphragmatic breathing steady',
-      'Lifting foot too high into a full knee-to-chest pull'
-    ],
-    progressions: ['Dead Bug'],
-    regressions: ['Static Supine Pelvic Tilt Hold']
-  },
-  {
-    id: '12',
-    name: 'Wall-Supported Single-Leg Hinge',
-    category: 'Rehabilitation',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Hamstrings', 'Glutes', 'Core'],
-    equipment: 'Wall',
-    description: 'A supported unilateral hinge that restores posterior chain motor control and balance while reinforcing stable trunk position.',
-    instructions: [
-      'Stand facing away from a wall, standing about one foot-length in front of it',
-      'Place top of rear foot flat against wall behind you for balance support',
-      'Hinge at hips, sending glutes back toward wall while keeping front knee soft and spine flat',
-      'Squeeze front glute and drive hips forward to return to tall standing position'
-    ],
-    commonMistakes: [
-      'Rounding lumbar spine during hip hinge lowering',
-      'Bending front knee into a full squat rather than a hip hinge',
-      'Pushing forcefully off wall with back foot'
-    ],
-    progressions: ['Bodyweight Single-Leg Roman Deadlift'],
-    regressions: ['Bilateral Wall-Supported Hip Hinge']
-  },
-  {
-    id: '13',
+    id: 'eccentric-wall-calf-raise',
     name: 'Eccentric Wall Calf Raise',
+    slug: 'eccentric-wall-calf-raise',
     category: 'Rehabilitation',
     difficulty: 'Beginner',
-    primaryMuscles: ['Calves', 'Achilles', 'Ankles'],
+    primaryMuscles: ['Gastrocnemius', 'Soleus'],
+    image: '/images/exercises/rehabilitation/eccentric-wall-calf-raise.webp',
     equipment: 'Wall',
-    description: 'A controlled calf loading exercise designed to strengthen the lower leg, build Achilles tendon capacity, and improve ankle control.',
+    description: 'An effective rehabilitation exercise focusing on the eccentric phase of calf loading to treat Achilles tendonitis and strengthen lower calves.',
     instructions: [
-      'Stand facing wall with fingertips flat against it for balance, feet hip-width',
-      'Rise up onto balls of both feet over a 1-second count',
-      'Shift weight onto target leg and slowly lower heel down to floor over a 3-to-4 second eccentric count',
-      'Place opposite foot back down and repeat cycle'
+      'Stand facing a wall with hands resting on the wall for balance.',
+      'Rise up onto your toes using both feet.',
+      'Lift one foot off the floor and slowly lower the heel of the remaining foot down over 3 to 5 seconds.',
+      'Use both feet to push back up to the top.'
     ],
     commonMistakes: [
-      'Dropping heel down quickly without controlling eccentric phase',
-      'Sickling ankles outward during plant flexed position',
-      'Leaning forward at waist instead of keeping upright spine'
+      'Lowering the heel too quickly',
+      'Bending the knee during the descent'
     ],
-    progressions: ['Single-Leg Eccentric Stair Calf Drop'],
-    regressions: ['Bilateral Calf Raise and Bilateral Lower']
+    progressions: [
+      'Standard single-leg calf raise',
+      'Weighted eccentric calf raise'
+    ],
+    regressions: [
+      'Two-legged calf raise'
+    ]
   },
   {
-    id: '14',
-    name: 'Quadruped Bird-Dog Hold',
+    id: 'heel-walk',
+    name: 'Heel Walk',
+    slug: 'heel-walk',
     category: 'Rehabilitation',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Core', 'Glutes', 'Scapular Stabilizers'],
-    equipment: 'Floor',
-    description: 'An isometric cross-body stabilization exercise that builds spinal endurance, core balance, and shoulder-hip integration.',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Tibialis Anterior', 'Anterior Lower Leg'],
+    image: '/images/exercises/rehabilitation/heel-walk.webp',
+    equipment: 'Bodyweight',
+    description: 'A dynamic rehabilitation walk focusing on dorsiflexion and strengthening the shin muscles.',
     instructions: [
-      'Begin on hands and knees with hands beneath shoulders and knees beneath hips',
-      'Slowly reach left arm forward and right leg backward until both are parallel to floor',
-      'Keep hips level and spine neutral, holding peak extension statically for 5-10 seconds',
-      'Return to starting all-fours position and repeat on opposite arm and leg'
+      'Lift your toes and the front of your feet entirely off the floor so you are balancing strictly on your heels.',
+      'Walk forward in a controlled manner, keeping your toes elevated.',
+      'Maintain an upright posture and stable core throughout the walk.'
     ],
     commonMistakes: [
-      'Arching lower back or lifting leg higher than hip line',
-      'Rotating hips side-to-side out of square alignment',
-      'Hyperextending neck upward instead of keeping chin tucked'
+      'Allowing toes to drop and slap the floor',
+      'Leaning excessively backward'
     ],
-    progressions: ['Dynamic Bird-Dog with Elbow-to-Knee Crunch'],
-    regressions: ['Quadruped Single-Leg Extension Only']
+    progressions: [
+      'Resisted heel walk',
+      'Longer duration heel walk'
+    ],
+    regressions: [
+      'Seated ankle dorsiflexion against band'
+    ]
+  },
+  {
+    id: 'prone-scapular-y-raise',
+    name: 'Prone Scapular Y Raise',
+    slug: 'prone-scapular-y-raise',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Lower Trapezius', 'Serratus Anterior', 'Scapular Stabilizers'],
+    image: '/images/exercises/rehabilitation/prone-scapular-y-raise.webp',
+    equipment: 'Bodyweight',
+    description: 'A foundational scapular stabilization exercise targeting the lower trapezius and shoulder girdle.',
+    instructions: [
+      'Lie face down on a mat or incline bench with your arms extended overhead in a Y shape, thumbs pointing up.',
+      'Engage your upper back and lift your arms a few inches off the floor.',
+      'Hold briefly at the top while squeezing your shoulder blades downward and together.',
+      'Lower your arms back down with control.'
+    ],
+    commonMistakes: [
+      'Shrugging shoulders toward the ears',
+      'Using momentum to swing arms'
+    ],
+    progressions: [
+      'Weighted Y raise with light plates',
+      'Incline bench Y raise'
+    ],
+    regressions: [
+      'Seated Y raise',
+      'Wall slide Y raise'
+    ]
+  },
+  {
+    id: 'quadruped-bird-dog-hold',
+    name: 'Quadruped Bird-Dog Hold',
+    slug: 'quadruped-bird-dog-hold',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Core', 'Erector Spinae', 'Glutes', 'Shoulder Stabilizers'],
+    image: '/images/exercises/rehabilitation/quadruped-bird-dog-hold.webp',
+    equipment: 'Bodyweight',
+    description: 'An isometric stability exercise designed to improve core strength, spinal alignment, and cross-body coordination.',
+    instructions: [
+      'Start on your hands and knees in a tabletop position with wrists under shoulders and knees under hips.',
+      'Simultaneously extend your right arm forward and left leg backward until parallel to the floor.',
+      'Hold this extended position stably without letting your hips or lower back sag or rotate.',
+      'Return to the start and switch to the opposite limbs.'
+    ],
+    commonMistakes: [
+      'Arching or rotating the lower back',
+      'Lifting limbs too high past parallel'
+    ],
+    progressions: [
+      'Extended hold duration',
+      'Unstable surface bird-dog'
+    ],
+    regressions: [
+      'Single-arm lift only',
+      'Single-leg lift only'
+    ]
+  },
+  {
+    id: 'side-lying-clamshell',
+    name: 'Side-Lying Clamshell',
+    slug: 'side-lying-clamshell',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Gluteus Medius', 'External Rotators'],
+    image: '/images/exercises/rehabilitation/side-lying-clamshell.webp',
+    equipment: 'Bodyweight / Resistance Band',
+    description: 'A targeted hip rehabilitation exercise strengthening the gluteus medius and improving hip stability.',
+    instructions: [
+      'Lie on your side with your knees bent at a 90-degree angle and your hips and feet stacked.',
+      'Keeping your heels touching, raise your top knee as high as you can without rotating your pelvis backward.',
+      'Pause briefly at the top, then slowly lower your knee back to the starting position.'
+    ],
+    commonMistakes: [
+      'Rolling the pelvis backward during the lift',
+      'Lifting the bottom foot off the floor'
+    ],
+    progressions: [
+      'Banded Clamshell',
+      'Side Plank Clamshell'
+    ],
+    regressions: [
+      'Smaller range of motion without band'
+    ]
+  },
+  {
+    id: 'single-leg-balance',
+    name: 'Single-Leg Balance',
+    slug: 'single-leg-balance',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Ankle Stabilizers', 'Core', 'Gluteus Medius'],
+    image: '/images/exercises/rehabilitation/single-leg-balance.webp',
+    equipment: 'Bodyweight',
+    description: 'An essential proprioceptive and balance exercise to enhance ankle stability and neuromuscular control.',
+    instructions: [
+      'Stand tall and lift one foot slightly off the floor, keeping your weight centered on the standing foot.',
+      'Keep your posture upright, gaze forward, and core engaged.',
+      'Hold the balance position steadily for the prescribed time.'
+    ],
+    commonMistakes: [
+      'Leaning heavily to one side',
+      'Locking the standing knee hyperextended'
+    ],
+    progressions: [
+      'Eyes closed single-leg balance',
+      'Balance pad single-leg stand'
+    ],
+    regressions: [
+      'Holding onto a stable surface for light fingertip support'
+    ]
+  },
+  {
+    id: 'supine-glute-bridge',
+    name: 'Supine Glute Bridge',
+    slug: 'supine-glute-bridge',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Glutes', 'Hamstrings', 'Core'],
+    image: '/images/exercises/rehabilitation/supine-glute-bridge.webp',
+    equipment: 'Bodyweight',
+    description: 'A foundational posterior chain exercise to activate glutes and support lower back rehabilitation.',
+    instructions: [
+      'Lie on your back with your knees bent and feet flat on the floor hip-width apart.',
+      'Drive through your heels and squeeze your glutes to lift your hips toward the ceiling until your body forms a straight line from knees to shoulders.',
+      'Hold briefly at the top, then lower your hips back down with control.'
+    ],
+    commonMistakes: [
+      'Hyperextending the lower back at the top',
+      'Pushing through toes instead of heels'
+    ],
+    progressions: [
+      'Single-leg glute bridge',
+      'Weighted glute bridge'
+    ],
+    regressions: [
+      'Smaller range of motion bridge'
+    ]
+  },
+  {
+    id: 'supine-pelvic-tilt-with-march',
+    name: 'Supine Pelvic Tilt with March',
+    slug: 'supine-pelvic-tilt-with-march',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Transverse Abdominis', 'Core', 'Hip Flexors'],
+    image: '/images/exercises/rehabilitation/supine-pelvic-tilt-with-march.webp',
+    equipment: 'Bodyweight',
+    description: 'A core stabilization exercise designed to train deep abdominal engagement and pelvic control.',
+    instructions: [
+      'Lie on your back with knees bent and feet flat on the floor.',
+      'Flatten your lower back against the floor by performing a posterior pelvic tilt.',
+      'Maintaining this pelvic stability and core engagement, slowly lift one foot a few inches off the floor like marching.',
+      'Lower that foot back down and alternate to the other leg without letting your pelvis rock.'
+    ],
+    commonMistakes: [
+      'Allowing the lower back to arch when lifting the leg',
+      'Rushing the movement'
+    ],
+    progressions: [
+      'Tabletop alternating leg extensions',
+      'Dead bug'
+    ],
+    regressions: [
+      'Static pelvic tilt hold without marching'
+    ]
+  },
+  {
+    id: 'tandem-heel-to-toe-walk',
+    name: 'Tandem Heel-to-Toe Walk',
+    slug: 'tandem-heel-to-toe-walk',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Proprioceptive System', 'Ankle Stabilizers', 'Core'],
+    image: '/images/exercises/rehabilitation/tandem-heel-to-toe-walk.webp',
+    equipment: 'Bodyweight',
+    description: 'A dynamic balance and coordination exercise walking in a straight line with heel touching toe.',
+    instructions: [
+      'Stand upright and place one foot directly in front of the other so the heel of the front foot touches the toes of the back foot.',
+      'Step forward with the back foot, placing its heel directly in front of the lead foot toes.',
+      'Walk in a straight line in this tandem fashion, focusing on stability.'
+    ],
+    commonMistakes: [
+      'Looking down directly at your feet',
+      'Rushing steps'
+    ],
+    progressions: [
+      'Eyes closed tandem walk',
+      'Tandem walk on a foam pad'
+    ],
+    regressions: [
+      'Wide-stance walking',
+      'Light fingertip wall support'
+    ]
+  },
+  {
+    id: 'toe-walk',
+    name: 'Toe Walk',
+    slug: 'toe-walk',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Gastrocnemius', 'Soleus', 'Intrinsic Foot Muscles'],
+    image: '/images/exercises/rehabilitation/toe-walk.webp',
+    equipment: 'Bodyweight',
+    description: 'A functional walking exercise focusing on plantarflexion endurance and calf strength.',
+    instructions: [
+      'Rise up high onto the balls of both feet as high as possible.',
+      'Walk forward smoothly while maintaining your elevation on your toes.',
+      'Keep your torso tall and core engaged throughout.'
+    ],
+    commonMistakes: [
+      'Dropping heels down during the walk',
+      'Slouching forward'
+    ],
+    progressions: [
+      'Resisted toe walk',
+      'Longer duration toe walk'
+    ],
+    regressions: [
+      'Static calf raise holds'
+    ]
+  },
+  {
+    id: 'towel-terminal-knee-extension',
+    name: 'Towel Terminal Knee Extension',
+    slug: 'towel-terminal-knee-extension',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Vastus Medialis', 'Quadriceps'],
+    image: '/images/exercises/rehabilitation/towel-terminal-knee-extension.webp',
+    equipment: 'Resistance Band / Towel',
+    description: 'A rehabilitation exercise focusing on terminal knee extension strength, particularly activating the Vastus Medialis Oblique (VMO).',
+    instructions: [
+      'Anchor a resistance band at knee height and place it around the back of your knee while standing in a staggered stance.',
+      'Slightly bend the banded knee, then push backward into full knee extension against the band resistance.',
+      'Squeeze your quad firmly at full extension for a brief hold before releasing.'
+    ],
+    commonMistakes: [
+      'Locking the knee with excessive force',
+      'Not fully extending the leg'
+    ],
+    progressions: [
+      'Heavy band terminal knee extension',
+      'Single-leg cable extension'
+    ],
+    regressions: [
+      'Seated short-arc quad extension'
+    ]
+  },
+  {
+    id: 'wall-forearm-slides',
+    name: 'Wall Forearm Slides',
+    slug: 'wall-forearm-slides',
+    category: 'Rehabilitation',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Serratus Anterior', 'Lower Trapezius', 'Shoulder Girdle'],
+    image: '/images/exercises/rehabilitation/wall-forearm-slides.webp',
+    equipment: 'Wall',
+    description: 'A shoulder mobility and scapular control exercise improving overhead movement mechanics.',
+    instructions: [
+      'Stand facing a wall with your forearms and palms resting flat against the wall at shoulder height.',
+      'Gently press your forearms into the wall and slide them upward overhead while keeping contact.',
+      'Lower your arms back to the starting position with control.'
+    ],
+    commonMistakes: [
+      'Arching the lower back as arms go up',
+      'Forearms losing contact with the wall'
+    ],
+    progressions: [
+      'Wall slides with a light resistance band around wrists',
+      'Foam roller wall slides'
+    ],
+    regressions: [
+      'Reduced range of motion wall slide'
+    ]
   }
 ];
+
+export default rehabilitationExercises;

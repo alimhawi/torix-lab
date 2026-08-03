@@ -3,7 +3,7 @@ import {
   calcBMI, bmiCategory, calcBMR, calcTDEE, calcFFMI,
   calcIdealWeight, calcHydration, calcProtein, getCalorieGoal
 } from '@/lib/calculations';
-import { ArrowRight, User, Ruler, Weight, Activity, Target, ChevronRight, Download } from 'lucide-react';
+import { ArrowRight, User, Ruler, Activity, Target, ChevronRight } from 'lucide-react';
 
 type FormData = {
   age: string;
@@ -30,23 +30,27 @@ const goalLabels: Record<string, string> = {
   rehabilitation: 'Rehabilitation & Recovery',
 };
 
-function extractNumber(val: any): number {
+function extractNumber(val: unknown): number {
   if (typeof val === 'number') return val;
+  if (typeof val === 'string') {
+    const parsed = Number(val);
+    return isNaN(parsed) ? 0 : parsed;
+  }
   if (val && typeof val === 'object') {
+    const record = val as Record<string, unknown>;
     for (const key of ['number', 'value', 'score', 'result', 'bmi', 'bmr', 'tdee', 'ffmi']) {
-      if (key in val && typeof val[key] === 'number') {
-        return val[key];
+      if (typeof record[key] === 'number') {
+        return record[key];
       }
     }
-    for (const v of Object.values(val)) {
+    for (const v of Object.values(record)) {
       if (typeof v === 'number') return v;
       const num = Number(v);
       if (!isNaN(num)) return num;
     }
     return 0;
   }
-  const parsed = Number(val);
-  return isNaN(parsed) ? 0 : parsed;
+  return 0;
 }
 
 function calculateNewScore(
@@ -122,7 +126,7 @@ function calculateNewScore(
 }
 
 function MetricCard({ label, value, unit, sub, color = 'teal' }: {
-  label: string; value: string | number | any; unit?: string; sub?: string; color?: string
+  label: string; value: string | number | null | undefined; unit?: string; sub?: string; color?: string
 }) {
   const colors: Record<string, string> = {
     teal: 'border-teal-100 bg-teal-50/50',
@@ -163,7 +167,7 @@ export default function Analysis() {
     const ffmi = extractNumber(calcFFMI(weight, height));
     const idealWeight = extractNumber(calcIdealWeight(height, f.gender));
     const hydration = extractNumber(calcHydration(weight, f.activityLevel));
-    const protein = extractNumber(calcProtein(weight, f.goal, f.activityLevel));
+    const protein = extractNumber(calcProtein(weight, f.goal));
     const calories = extractNumber(getCalorieGoal(tdee, f.goal));
     const perfScore = calculateNewScore(bmi, ffmi, f.gender, f.activityLevel, f.goal, weight, protein, hydration, tdee, calories);
     const bmiCat = bmiCategory(bmi);
@@ -369,8 +373,7 @@ export default function Analysis() {
       <div className="container-max px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-xl mx-auto">
           <div className="flex items-center gap-2 mb-10">
-            {steps.map((s, i) => {
-              const Icon = s.icon;
+              {steps.map((s, i) => {
               return (
                 <React.Fragment key={i}>
                   <div className={`flex items-center gap-2 ${i <= step ? 'text-teal-600' : 'text-slate-300'}`}>

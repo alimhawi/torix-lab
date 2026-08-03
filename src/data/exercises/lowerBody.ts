@@ -4,9 +4,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '1',
     name: 'Chair Squat',
+    slug: 'chair-squat',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Quadriceps', 'Glutes'],
+    image: '/images/exercises/lower-body/chair-squat.webp',
     equipment: 'Chair',
     description: 'An accessible squat regression that teaches proper hip hinge and knee tracking using a chair as a depth marker.',
     instructions: [
@@ -26,9 +28,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '2',
     name: 'Bodyweight Squat',
+    slug: 'bodyweight-squat',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings'],
+    image: '/images/exercises/lower-body/bodyweight-squat.webp',
     equipment: 'None',
     description: 'The foundational lower body compound movement. Builds total-leg strength, hip mobility, and core stability.',
     instructions: [
@@ -48,9 +52,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '3',
     name: 'Wall Sit',
+    slug: 'wall-sit',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Quadriceps', 'Glutes'],
+    image: '/images/exercises/lower-body/wall-sit.webp',
     equipment: 'Wall',
     description: 'An isometric endurance hold that strengthens the quadriceps and knees with minimal joint impact.',
     instructions: [
@@ -70,9 +76,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '4',
     name: 'Glute Bridge',
+    slug: 'glute-bridge',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Glutes', 'Hamstrings', 'Core'],
+    image: '/images/exercises/lower-body/glute-bridge.webp',
     equipment: 'None',
     description: 'The foundational supine hip extension exercise targeting posterior chain activation and hip stability.',
     instructions: [
@@ -92,9 +100,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '5',
     name: 'Reverse Lunge',
+    slug: 'reverse-lunge',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings'],
+    image: '/images/exercises/lower-body/reverse-lunge.webp',
     equipment: 'None',
     description: 'A joint-friendly unilateral exercise that builds single-leg strength, deceleration control, and balance.',
     instructions: [
@@ -114,9 +124,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '6',
     name: 'Standing Calf Raise',
+    slug: 'standing-calf-raise',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Calves'],
+    image: '/images/exercises/lower-body/standing-calf-raise.webp',
     equipment: 'Stairs',
     description: 'An essential lower-leg isolation movement targeting gastrocnemius strength and ankle plantarflexion.',
     instructions: [
@@ -136,9 +148,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '7',
     name: 'Side-Lying Leg Raise',
+    slug: 'side-lying-leg-raise',
     category: 'Lower Body',
     difficulty: 'Beginner',
     primaryMuscles: ['Gluteus Medius', 'Hip Abductors'],
+    image: '/images/exercises/lower-body/side-lying-leg-raise.webp',
     equipment: 'None',
     description: 'A targeted lateral hip drill for isolating the gluteus medius, essential for pelvic alignment and knee stability.',
     instructions: [
@@ -158,9 +172,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '8',
     name: 'Bulgarian Split Squat',
+    slug: 'bulgarian-split-squat',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Glutes'],
+    image: '/images/exercises/lower-body/bulgarian-split-squat.webp',
     equipment: 'Chair',
     description: 'An advanced elevated unilateral squat that overloads single-leg strength, hip flexor flexibility, and balance.',
     instructions: [
@@ -180,9 +196,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '9',
     name: 'Single-Leg Glute Bridge',
+    slug: 'single-leg-glute-bridge',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Glutes', 'Hamstrings', 'Core'],
+    image: '/images/exercises/lower-body/single-leg-glute-bridge.webp',
     equipment: 'None',
     description: 'Unilateral extension drill that corrects left-to-right glute imbalances and strengthens pelvic stabilization.',
     instructions: [
@@ -202,9 +220,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '10',
     name: 'Single-Leg Romanian Deadlift',
+    slug: 'single-leg-romanian-deadlift',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hamstrings', 'Glutes', 'Core'],
+    image: '/images/exercises/lower-body/single-leg-romanian-deadlift.webp',
     equipment: 'None',
     description: 'Unilateral hip hinge movement developing posterior chain strength, dynamic hamstring flexibility, and balance.',
     instructions: [
@@ -224,9 +244,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '11',
     name: 'Cossack Squat',
+    slug: 'cossack-squat',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Adductors'],
+    image: '/images/exercises/lower-body/cossack-squat.webp',
     equipment: 'None',
     description: 'A deep frontal-plane squat pattern that builds lateral hip power, ankle mobility, and groin flexibility.',
     instructions: [
@@ -246,9 +268,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '12',
     name: 'Towel Floor Hamstring Curl',
+    slug: 'towel-floor-hamstring-curl',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hamstrings', 'Glutes', 'Core'],
+    image: '/images/exercises/lower-body/towel-floor-hamstring-curl.webp',
     equipment: 'Towel',
     description: 'Dynamic floor exercise utilizing towel sliding friction on smooth floor surfaces for hamstring hypertrophy.',
     instructions: [
@@ -268,9 +292,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '13',
     name: 'Step-Up',
+    slug: 'step-up',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Glutes'],
+    image: '/images/exercises/lower-body/step-up.webp',
     equipment: 'Stairs',
     description: 'Functional single-leg concentric power builder mimicking natural stair climbing and gait mechanics.',
     instructions: [
@@ -290,9 +316,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '14',
     name: 'Single-Leg Calf Raise',
+    slug: 'single-leg-calf-raise',
     category: 'Lower Body',
     difficulty: 'Intermediate',
     primaryMuscles: ['Calves'],
+    image: '/images/exercises/lower-body/single-leg-calf-raise.webp',
     equipment: 'Stairs',
     description: 'Unilateral calf elevation exercise that overloads gastrocnemius and soleus for improved ankle stiffness.',
     instructions: [
@@ -312,9 +340,11 @@ export const lowerBodyExercises: Exercise[] = [
   {
     id: '15',
     name: 'Pistol Squat',
+    slug: 'pistol-squat',
     category: 'Advanced',
     difficulty: 'Advanced',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Core'],
+    image: '/images/exercises/lower-body/pistol-squat.webp',
     equipment: 'None',
     description: 'The peak bodyweight single-leg exercise requiring elite quad strength, hip flexor tension, and balance.',
     instructions: [

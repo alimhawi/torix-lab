@@ -151,7 +151,7 @@ export default function Dashboard() {
     const protein = calcProtein(w, goal || act);
     const hydration = calcHydration(w, act);
     const estimatedLBM = calcEstimatedLBM(w, h, g);
-    const ffmi = calcFFMI(w, h, undefined, g);
+    const ffmi = calcFFMI(w, h);
 
     return { bmi, bmiCat, bmr, tdee, calories, protein, hydration, estimatedLBM, ffmi };
   })() : null;

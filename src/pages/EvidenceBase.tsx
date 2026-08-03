@@ -11,7 +11,6 @@ import {
   Compass,
   CheckCircle2,
   Brain,
-  ShieldCheck,
 } from 'lucide-react';
 import { site } from '../config/site';
 

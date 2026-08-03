@@ -4,9 +4,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '1',
     name: 'Seated Upper Trapezius Stretch',
+    slug: 'seated-upper-trapezius-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Neck', 'Upper Trapezius'],
+    image: '/images/exercises/cool-down/seated-upper-trapezius-stretch.webp',
     equipment: 'Chair',
     description: 'A gentle static neck stretch targeting upper trapezius and levator scapulae tension accrued from heavy training or posture stress.',
     instructions: [
@@ -27,9 +29,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '2',
     name: 'Wall Chest Stretch',
+    slug: 'wall-chest-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Chest', 'Shoulders'],
+    image: '/images/exercises/cool-down/wall-chest-stretch.webp',
     equipment: 'Wall',
     description: 'A targeted static pectoral stretch that restores anterior upper-body muscle length and counters shoulder protraction post-workout.',
     instructions: [
@@ -49,9 +53,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '3',
     name: 'Cross-Body Shoulder Stretch',
+    slug: 'cross-body-shoulder-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Shoulders', 'Upper Back'],
+    image: '/images/exercises/cool-down/cross-body-shoulder-stretch.webp',
     equipment: 'None',
     description: 'A classic post-workout static deltoid stretch that releases posterior shoulder capsule tightness and reduces upper back muscle tone.',
     instructions: [
@@ -71,9 +77,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '4',
     name: 'Child\'s Pose with Lateral Reach',
+    slug: 'child-s-pose-with-lateral-reach',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Upper Back', 'Lats', 'Lower Back'],
+    image: '/images/exercises/cool-down/child-s-pose-with-lateral-reach.webp',
     equipment: 'Floor',
     description: 'A restorative floor stretch that lengthens the latissimus dorsi, decompresses the spine, and promotes parasympathetic nervous system recovery.',
     instructions: [
@@ -93,9 +101,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '5',
     name: 'Supine Spinal Twist',
+    slug: 'supine-spinal-twist',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Lower Back', 'Glutes', 'Chest'],
+    image: '/images/exercises/cool-down/supine-spinal-twist.webp',
     equipment: 'Floor',
     description: 'A relaxing rotational floor stretch that releases lower back spinal pressure and relieves gluteal tension after heavy lifting.',
     instructions: [
@@ -115,9 +125,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '6',
     name: 'Kneeling Hip Flexor Stretch',
+    slug: 'kneeling-hip-flexor-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Hip Flexors', 'Quadriceps'],
+    image: '/images/exercises/cool-down/kneeling-hip-flexor-stretch.webp',
     equipment: 'Floor',
     description: 'An essential static lunge stretch targeting the psoas and rectus femoris to restore full hip extension following lower body training.',
     instructions: [
@@ -137,9 +149,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '7',
     name: 'Standing Wall Quadriceps Stretch',
+    slug: 'standing-wall-quadriceps-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Quadriceps', 'Hip Flexors'],
+    image: '/images/exercises/cool-down/standing-wall-quadriceps-stretch.webp',
     equipment: 'Wall',
     description: 'A balance-supported standing static stretch isolating the quadriceps muscle group and relieving anterior knee joint tension.',
     instructions: [
@@ -159,9 +173,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '8',
     name: 'Supine Figure-Four Glute Stretch',
+    slug: 'supine-figure-four-glute-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Glutes', 'Hip Rotators'],
+    image: '/images/exercises/cool-down/supine-figure-four-glute-stretch.webp',
     equipment: 'Floor',
     description: 'A safe, back-supported stretch targeting gluteus maximus and deep piriformis to release hip tightness after squatting or running.',
     instructions: [
@@ -181,9 +197,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '9',
     name: 'Towel-Assisted Supine Hamstring Stretch',
+    slug: 'towel-assisted-supine-hamstring-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Hamstrings', 'Calves'],
+    image: '/images/exercises/cool-down/towel-assisted-supine-hamstring-stretch.webp',
     equipment: 'Towel',
     description: 'A controlled supine hamstring stretch utilizing a towel loop to allow deep posterior chain relaxation without straining low back or neck.',
     instructions: [
@@ -203,9 +221,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '10',
     name: 'Seated Butterfly Stretch',
+    slug: 'seated-butterfly-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Adductors', 'Groin'],
+    image: '/images/exercises/cool-down/seated-butterfly-stretch.webp',
     equipment: 'Floor',
     description: 'A classic static adductor stretch that gently opens inner thigh muscles and relaxes pelvic floor tension post-training.',
     instructions: [
@@ -225,9 +245,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '11',
     name: 'Wall Calf Stretch',
+    slug: 'wall-calf-stretch',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Calves', 'Achilles'],
+    image: '/images/exercises/cool-down/wall-calf-stretch.webp',
     equipment: 'Wall',
     description: 'A static gastrocnemius and soleus stretch using wall leverage to lengthen lower leg muscles and Achilles tendon post-cardio or resistance work.',
     instructions: [
@@ -247,9 +269,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '12',
     name: 'Pigeon Pose',
+    slug: 'pigeon-pose',
     category: 'Cool-Down',
     difficulty: 'Intermediate',
     primaryMuscles: ['Glutes', 'Hip Flexors', 'Hips'],
+    image: '/images/exercises/cool-down/pigeon-pose.webp',
     equipment: 'Floor',
     description: 'An intermediate deep hip opener targeting external rotators and deep gluteal tissues for advanced posterior hip recovery.',
     instructions: [
@@ -269,9 +293,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '13',
     name: 'Seated Single-Leg Hamstring Stretch',
+    slug: 'seated-single-leg-hamstring-stretch',
     category: 'Cool-Down',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hamstrings', 'Lower Back'],
+    image: '/images/exercises/cool-down/seated-single-leg-hamstring-stretch.webp',
     equipment: 'Floor',
     description: 'A unilateral static stretch that lengthens hamstrings while releasing tension along thoracolumbar fascia and lower spine.',
     instructions: [
@@ -291,9 +317,11 @@ export const coolDownExercises: Exercise[] = [
   {
     id: '14',
     name: 'Legs-Up-the-Wall Restorative Pose',
+    slug: 'legs-up-the-wall-restorative-pose',
     category: 'Cool-Down',
     difficulty: 'Beginner',
     primaryMuscles: ['Hamstrings', 'Calves', 'Lower Back'],
+    image: '/images/exercises/cool-down/legs-up-the-wall-restorative-pose.webp',
     equipment: 'Wall',
     description: 'A parasympathetic recovery pose that promotes venous return, reduces lower limb fluid pooling, and lowers heart rate after intense physical effort.',
     instructions: [

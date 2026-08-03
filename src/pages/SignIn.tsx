@@ -43,7 +43,7 @@ export default function SignIn() {
       }
 
       navigate('/dashboard');
-    } catch (err: any) {
+    } catch {
       setError('A network error occurred. Please check your connection.');
       setLoading(false);
     }

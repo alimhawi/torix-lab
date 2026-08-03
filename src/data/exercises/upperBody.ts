@@ -1,358 +1,563 @@
-import { Exercise } from './types';
+export interface Exercise {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  primaryMuscles: string[];
+  image: string;
+  equipment: string;
+  description: string;
+  instructions: string[];
+  commonMistakes: string[];
+  progressions: string[];
+  regressions: string[];
+}
 
 export const upperBodyExercises: Exercise[] = [
   {
-    id: '1',
-    name: 'Push-Up',
+    id: 'push-up',
+    name: 'Push Up',
+    slug: 'push-up',
     category: 'Upper Body',
     difficulty: 'Beginner',
-    primaryMuscles: ['Chest', 'Triceps', 'Shoulders'],
-    equipment: 'None',
-    description: 'The foundational upper body pushing exercise. Develops chest, triceps, and shoulder strength with core stability.',
+    primaryMuscles: ['Chest', 'Triceps', 'Anterior Deltoids', 'Core'],
+    image: '/images/exercises/upper-body/push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'A foundational compound bodyweight exercise targeting the chest, shoulders, and triceps while engaging the core.',
     instructions: [
-      'Start in high plank with hands shoulder-width apart',
-      'Lower your chest toward the floor with elbows at a 45-degree angle',
-      'Keep your core engaged and maintain a rigid body line',
-      'Push firmly through palms back to the starting position'
+      'Start in a high plank position with hands slightly wider than shoulder-width apart.',
+      'Keep your core tight, glutes squeezed, and body in a straight line from head to heels.',
+      'Lower your body by bending your elbows until your chest nearly touches the floor.',
+      'Push back up to the starting position, fully extending your arms.'
     ],
     commonMistakes: [
-      'Letting hips sag or arching the lower back',
-      'Flaring elbows out perpendicular to the torso',
+      'Sagging hips',
+      'Flaring elbows too wide',
       'Incomplete range of motion'
     ],
-    progressions: ['Decline Push-Up', 'Diamond Push-Up', 'Archer Push-Up'],
-    regressions: ['Incline Push-Up', 'Wall Push-Up']
+    progressions: [
+      'Decline Push Up',
+      'Archer Push Up',
+      'One Arm Push Up'
+    ],
+    regressions: [
+      'Incline Push Up',
+      'Wall Push Up'
+    ]
   },
   {
-    id: '2',
-    name: 'Incline Push-Up',
+    id: 'wide-push-up',
+    name: 'Wide Push Up',
+    slug: 'wide-push-up',
     category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Chest', 'Shoulders', 'Triceps'],
-    equipment: 'Chair',
-    description: 'An elevated pushing variation that reduces the percentage of body weight moved while preserving standard plank alignment.',
+    difficulty: 'Intermediate',
+    primaryMuscles: ['Outer Chest', 'Anterior Deltoids', 'Triceps'],
+    image: '/images/exercises/upper-body/wide-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'A push-up variation with hands placed wider than shoulder-width to place greater emphasis on the pectoral muscles.',
     instructions: [
-      'Place hands slightly wider than shoulder-width on a sturdy chair, bench, or step',
-      'Extend legs behind you so your body forms a straight line from head to heels',
-      'Lower your chest toward the elevated surface by bending elbows at a 45-degree angle',
-      'Press firmly through your palms to return to full arm extension'
+      'Assume a standard plank position but place your hands significantly wider than shoulder-width.',
+      'Engage your core and maintain a straight body alignment.',
+      'Lower your torso until your chest approaches the floor, flaring elbows moderately.',
+      'Press through your palms to return to the starting position.'
     ],
     commonMistakes: [
-      'Allowing the lower back to arch excessively',
-      'Flaring elbows outward perpendicular to the torso',
-      'Bending only at the neck instead of lowering the whole body'
+      'Placing hands too far out causing shoulder strain',
+      'Sagging the lower back'
     ],
-    progressions: ['Push-Up', 'Decline Push-Up'],
-    regressions: ['Wall Push-Up', 'High Incline Push-Up']
+    progressions: [
+      'Archer Push Up',
+      'Decline Push Up'
+    ],
+    regressions: [
+      'Standard Push Up',
+      'Incline Push Up'
+    ]
   },
   {
-    id: '3',
-    name: 'Scapular Push-Up',
+    id: 'diamond-push-up',
+    name: 'Diamond Push Up',
+    slug: 'diamond-push-up',
     category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Back', 'Shoulders'],
-    equipment: 'None',
-    description: 'A scapular isolation drill that targets the serratus anterior and lower traps to build foundational shoulder health.',
+    difficulty: 'Intermediate',
+    primaryMuscles: ['Triceps Brachii', 'Inner Chest', 'Anterior Deltoids'],
+    image: '/images/exercises/upper-body/diamond-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'A challenging push-up variation with hands close together forming a diamond shape, focusing heavily on the triceps.',
     instructions: [
-      'Assume a high plank position with arms straight and wrists directly under shoulders',
-      'Keep your elbows fully locked throughout the entire movement',
-      'Pinch your shoulder blades together to lower your chest slightly',
-      'Push through your hands to protract your shoulder blades and spread your upper back'
+      'Place your hands close together under your chest so index fingers and thumbs form a diamond shape.',
+      'Extend your legs back into a high plank position with a rigid core.',
+      'Lower your chest toward your hands, keeping elbows close to your torso.',
+      'Press upward, focusing on extending your elbows to engage the triceps.'
     ],
     commonMistakes: [
-      'Bending the elbows to lower the body',
-      'Sagging at the waist or lumbar spine',
-      'Shrugging shoulders up toward the ears'
+      'Flaring elbows out away from the body',
+      'Bending at the hips instead of maintaining a straight plank'
     ],
-    progressions: ['Push-Up', 'Pike Push-Up'],
-    regressions: ['Quadruped Scapular Push-Up']
+    progressions: [
+      'Decline Diamond Push Up',
+      'One Arm Push Up'
+    ],
+    regressions: [
+      'Standard Push Up',
+      'Incline Push Up'
+    ]
   },
   {
-    id: '4',
+    id: 'incline-push-up',
+    name: 'Incline Push Up',
+    slug: 'incline-push-up',
+    category: 'Upper Body',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Lower Chest', 'Triceps', 'Anterior Deltoids'],
+    image: '/images/exercises/upper-body/incline-push-up.webp',
+    equipment: 'Bench / Elevated Surface',
+    description: 'An easier variation of the standard push-up performed with hands elevated on a stable surface, reducing the load on the upper body.',
+    instructions: [
+      'Place your hands firmly on an elevated platform or bench slightly wider than shoulder-width.',
+      'Step your feet back so your body forms a straight line at an incline.',
+      'Lower your chest toward the edge of the platform by bending your elbows.',
+      'Press back up to the starting position while keeping your core braced.'
+    ],
+    commonMistakes: [
+      'Using an unstable surface',
+      'Not lowering the chest fully to the surface edge'
+    ],
+    progressions: [
+      'Standard Push Up',
+      'Wide Push Up',
+      'Decline Push Up'
+    ],
+    regressions: [
+      'Wall Push Up'
+    ]
+  },
+  {
+    id: 'decline-push-up',
+    name: 'Decline Push Up',
+    slug: 'decline-push-up',
+    category: 'Upper Body',
+    difficulty: 'Intermediate',
+    primaryMuscles: ['Upper Chest', 'Anterior Deltoids', 'Triceps'],
+    image: '/images/exercises/upper-body/decline-push-up.webp',
+    equipment: 'Bench / Elevated Surface',
+    description: 'A push-up variation with feet elevated on a platform, placing more load on the upper chest and shoulders.',
+    instructions: [
+      'Place your feet securely on an elevated surface or bench and your hands on the floor.',
+      'Align your body in a straight line with your core and glutes fully engaged.',
+      'Lower your head and chest toward the floor in a controlled motion.',
+      'Press powerfully through your palms to return to the starting position.'
+    ],
+    commonMistakes: [
+      'Arching the lower back',
+      'Looking up and straining the cervical spine'
+    ],
+    progressions: [
+      'Pike Push Up',
+      'Handstand Push Up'
+    ],
+    regressions: [
+      'Standard Push Up',
+      'Incline Push Up'
+    ]
+  },
+  {
+    id: 'pike-push-up',
+    name: 'Pike Push Up',
+    slug: 'pike-push-up',
+    category: 'Upper Body',
+    difficulty: 'Intermediate',
+    primaryMuscles: ['Anterior Deltoids', 'Triceps', 'Upper Pectorals'],
+    image: '/images/exercises/upper-body/pike-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'An overhead pressing bodyweight movement performed with hips raised high in a pike position to target the shoulders.',
+    instructions: [
+      'Start in a push-up position, then walk your feet forward and lift your hips high to form an inverted V-shape.',
+      'Keep your legs relatively straight and look toward your feet or hands.',
+      'Lower the top of your head toward the floor by bending your elbows forward and down.',
+      'Press through your shoulders and palms to push your body back to the starting position.'
+    ],
+    commonMistakes: [
+      'Flaring elbows outward instead of tracking them backward/inward',
+      'Bending knees too much'
+    ],
+    progressions: [
+      'Wall Handstand Hold',
+      'Handstand Push Up'
+    ],
+    regressions: [
+      'Decline Push Up',
+      'Standard Push Up'
+    ]
+  },
+  {
+    id: 'hindu-push-up',
+    name: 'Hindu Push Up',
+    slug: 'hindu-push-up',
+    category: 'Upper Body',
+    difficulty: 'Advanced',
+    primaryMuscles: ['Shoulders', 'Chest', 'Triceps', 'Spine Extensors'],
+    image: '/images/exercises/upper-body/hindu-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'A fluid, dynamic bodyweight movement transitioning from a pike position into a deep arch, enhancing upper body mobility and strength.',
+    instructions: [
+      'Begin in a pike position with hips high and feet wide.',
+      'Swoop your body down and forward by bending your elbows, grazing your chest close to the floor.',
+      'Arch your upper back and press your chest upward and forward into an upward-dog position.',
+      'Reverse the motion by pushing your hips back and up to return to the start.'
+    ],
+    commonMistakes: [
+      'Rushing the motion',
+      'Locking the elbows harshly at the top of the arch'
+    ],
+    progressions: [
+      'Handstand Push Up'
+    ],
+    regressions: [
+      'Pike Push Up',
+      'Standard Push Up'
+    ]
+  },
+  {
+    id: 'archer-push-up',
+    name: 'Archer Push Up',
+    slug: 'archer-push-up',
+    category: 'Upper Body',
+    difficulty: 'Advanced',
+    primaryMuscles: ['Chest', 'Triceps', 'Core', 'Unilateral Stabilizers'],
+    image: '/images/exercises/upper-body/archer-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'An advanced asymmetric push-up where the body shifts toward one straightening arm while the other arm extends sideways.',
+    instructions: [
+      'Assume a wide hand placement position on the floor.',
+      'Lower your body toward one side, bending that elbow while keeping the opposite arm straight out to the side.',
+      'Press through the working arm to drive your body back up.',
+      'Alternate sides with each rep or complete all reps on one side before switching.'
+    ],
+    commonMistakes: [
+      'Using momentum to shift sides',
+      'Failing to keep the extended arm straight'
+    ],
+    progressions: [
+      'One Arm Push Up'
+    ],
+    regressions: [
+      'Wide Push Up',
+      'Standard Push Up'
+    ]
+  },
+  {
+    id: 'one-arm-push-up',
+    name: 'One Arm Push Up',
+    slug: 'one-arm-push-up',
+    category: 'Upper Body',
+    difficulty: 'Advanced',
+    primaryMuscles: ['Chest', 'Triceps', 'Core', 'Unilateral Stabilizers'],
+    image: '/images/exercises/upper-body/one-arm-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'The ultimate test of upper body pushing strength and core anti-rotation, performed using a single arm.',
+    instructions: [
+      'Take a wide stance with your feet and place one hand centrally under your chest, placing the other hand behind your back.',
+      'Brace your core intensely to prevent rotational twisting.',
+      'Lower your torso in a controlled descent until your chest nears the floor.',
+      'Drive powerfully through the single working arm to return to the top.'
+    ],
+    commonMistakes: [
+      'Allowing the torso to rotate open',
+      'Placing feet too close together'
+    ],
+    progressions: [
+      'Weighted One Arm Push Up'
+    ],
+    regressions: [
+      'Archer Push Up',
+      'Decline Push Up'
+    ]
+  },
+  {
+    id: 'scapular-push-up',
+    name: 'Scapular Push Up',
+    slug: 'scapular-push-up',
+    category: 'Upper Body',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Serratus Anterior', 'Scapular Retractors/Protractors'],
+    image: '/images/exercises/upper-body/scapular-push-up.webp',
+    equipment: 'Bodyweight',
+    description: 'A small movement focusing on scapular protraction and retraction to improve shoulder stability and serratus anterior strength.',
+    instructions: [
+      'Maintain a strict high plank position with completely straight arms and locked elbows.',
+      'Allow your shoulder blades to pinch together as your chest drops slightly without bending your elbows.',
+      'Push the floor away actively to spread your shoulder blades apart (protraction).',
+      'Repeat this controlled gliding motion continuously.'
+    ],
+    commonMistakes: [
+      'Bending the elbows during the movement',
+      'Moving too fast without full range of motion'
+    ],
+    progressions: [
+      'Standard Push Up'
+    ],
+    regressions: [
+      'Wall Scapular Push Up'
+    ]
+  },
+  {
+    id: 'wall-handstand-hold',
     name: 'Wall Handstand Hold',
+    slug: 'wall-handstand-hold',
     category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Shoulders', 'Triceps', 'Back'],
+    difficulty: 'Advanced',
+    primaryMuscles: ['Shoulders', 'Upper Trapezius', 'Core', 'Triceps'],
+    image: '/images/exercises/upper-body/wall-handstand-hold.webp',
     equipment: 'Wall',
-    description: 'An isometric overhead pressing drill that develops upper body isometric endurance and overhead shoulder mobility.',
+    description: 'An isometric upper-body strength and stability exercise supporting the body upside down against a wall.',
     instructions: [
-      'Place hands on the floor a few inches away from a wall',
-      'Kick up or walk your feet up until your body is vertically aligned against the wall',
-      'Press forcefully into the floor to elevate your shoulders toward your ears',
-      'Maintain a hollow body shape with glutes and core tightly engaged',
-      'Hold for the target duration, then lower down with control'
+      'Kick up into a handstand with your heels resting lightly against a sturdy wall.',
+      'Keep your arms fully locked out, head neutral, and core tight.',
+      'Push actively through your shoulders to elevate your body away from the floor.',
+      'Hold the position steadily for the prescribed duration.'
     ],
     commonMistakes: [
-      'Arching the lower back into a banana shape',
-      'Bending the elbows',
-      'Looking straight down at the hands instead of keeping a neutral neck'
+      'Arching the lower back excessively',
+      'Shrugging shoulders into the ears'
     ],
-    progressions: ['Freestanding Handstand Hold', 'Handstand Push-Up'],
-    regressions: ['Pike Hold', 'Elevated Feet Pike Hold']
+    progressions: [
+      'Free-standing Handstand',
+      'Handstand Push Up'
+    ],
+    regressions: [
+      'Pike Hold',
+      'Incline Pike Hold'
+    ]
   },
   {
-    id: '5',
-    name: 'Prone Y-T-W Raises',
+    id: 'handstand-push-up',
+    name: 'Handstand Push Up',
+    slug: 'handstand-push-up',
     category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Back', 'Shoulders'],
-    equipment: 'None',
-    description: 'A bodyweight scapular stability series targeting the lower traps, mid traps, and rear deltoids.',
+    difficulty: 'Advanced',
+    primaryMuscles: ['Shoulders (Anterior/Lateral Deltoids)', 'Triceps', 'Core'],
+    image: '/images/exercises/upper-body/handstand-push-up.webp',
+    equipment: 'Wall / Free Standing',
+    description: 'An elite bodyweight pressing exercise performed in a handstand against a wall, requiring exceptional shoulder strength and balance.',
     instructions: [
-      'Lie face down on the floor with legs extended and forehead resting softly down',
-      'Form a Y-shape with arms overhead, thumbs pointing up, and raise arms off floor',
-      'Move arms out to the sides into a T-shape, thumbs up, and lift again',
-      'Bend elbows to form a W-shape, pull shoulder blades down, and lift arms',
-      'Perform reps smoothly in each position before switching'
+      'Kick up into a handstand position facing or backing against a wall for support.',
+      'Lower your head toward the floor in a controlled descent by bending your elbows.',
+      'Keep your body aligned and core engaged throughout the movement.',
+      'Press forcefully back up to full arm extension.'
     ],
     commonMistakes: [
-      'Hyperextending the neck or lower back',
-      'Rushing through reps without achieving a contraction',
-      'Using momentum instead of controlled muscle engagement'
+      'Losing core tension causing body to banana-shape',
+      'Uncontrolled descent'
     ],
-    progressions: ['Reverse Snow Angel', 'Prone Cobra'],
-    regressions: ['Seated Y-T-W Drills']
+    progressions: [
+      'Freestanding Handstand Push Up'
+    ],
+    regressions: [
+      'Wall Handstand Hold',
+      'Pike Push Up'
+    ]
   },
   {
-    id: '6',
+    id: 'bench-tricep-dip',
     name: 'Bench Tricep Dip',
+    slug: 'bench-tricep-dip',
     category: 'Upper Body',
     difficulty: 'Beginner',
-    primaryMuscles: ['Triceps', 'Shoulders', 'Chest'],
-    equipment: 'Chair',
-    description: 'An accessible triceps isolation exercise performed using a sturdy household chair or elevated surface.',
+    primaryMuscles: ['Triceps Brachii', 'Anterior Deltoids', 'Pectorals'],
+    image: '/images/exercises/upper-body/bench-tricep-dip.webp',
+    equipment: 'Bench / Chair',
+    description: 'A compound bodyweight movement using a bench to target the triceps and anterior shoulders.',
     instructions: [
-      'Sit on the edge of a sturdy chair or bench and place hands next to your hips, fingers facing forward',
-      'Slide your hips off the edge with knees bent at 90 degrees or legs extended',
-      'Lower your torso by bending elbows until upper arms are parallel to the floor',
-      'Press through your palms to extend elbows back to the start'
+      'Sit on the edge of a bench, place your hands beside your hips, and slide your glutes off the edge.',
+      'Extend your legs outward in front of you with knees slightly bent or straight.',
+      'Lower your hips downward by bending your elbows to about a 90-degree angle.',
+      'Press back up to the starting position using your triceps.'
     ],
     commonMistakes: [
-      'Flaring elbows outward away from the body',
-      'Lowering too deep and stressing the anterior shoulder joint',
-      'Shrugging shoulders up toward the ears'
+      'Moving the hips too far away from the bench',
+      'Flaring elbows outward'
     ],
-    progressions: ['Diamond Push-Up', 'Straight-Leg Bench Dip'],
-    regressions: ['Bent-Knee Bench Dip']
+    progressions: [
+      'Straight Leg Bench Dip',
+      'Parallel Bar Dip'
+    ],
+    regressions: [
+      'Bent-knee Bench Dip with closer foot placement'
+    ]
   },
   {
-    id: '7',
-    name: 'Diamond Push-Up',
+    id: 'pull-up',
+    name: 'Pull Up',
+    slug: 'pull-up',
     category: 'Upper Body',
     difficulty: 'Intermediate',
-    primaryMuscles: ['Triceps', 'Chest', 'Shoulders'],
-    equipment: 'None',
-    description: 'A narrow-stance push-up variation that dramatically increases load on the triceps and inner chest.',
+    primaryMuscles: ['Latissimus Dorsi', 'Biceps', 'Rhomboids', 'Rear Deltoids'],
+    image: '/images/exercises/upper-body/pull-up.webp',
+    equipment: 'Pull-up Bar',
+    description: 'A supreme compound pulling exercise lifting the body up to a bar, targeting the lats and upper back.',
     instructions: [
-      'Assume a push-up position with hands close together under your chest',
-      'Form a diamond shape with your thumbs and index fingers touching',
-      'Lower your chest toward your hands while keeping elbows close to your sides',
-      'Press forcefully back up to full elbow lockout'
+      'Grip an overhead pull-up bar with an overhand grip slightly wider than shoulder-width.',
+      'Hang fully extended with your core engaged and shoulders depressed.',
+      'Pull your chest up toward the bar by driving your elbows down and back.',
+      'Lower yourself with control back to a full hang.'
     ],
     commonMistakes: [
-      'Flaring elbows straight out to the sides',
-      'Sagging hips due to insufficient core engagement',
-      'Shortening range of motion at the bottom'
+      'Using momentum or kipping when strict form is needed',
+      'Not achieving full extension at the bottom'
     ],
-    progressions: ['Decline Diamond Push-Up', 'One-Arm Push-Up'],
-    regressions: ['Incline Diamond Push-Up', 'Push-Up']
+    progressions: [
+      'Weighted Pull Up',
+      'L-Sit Pull Up',
+      'Archer Pull Up'
+    ],
+    regressions: [
+      'Table Row',
+      'Band-Assisted Pull Up',
+      'Negative Pull Up'
+    ]
   },
   {
-    id: '8',
-    name: 'Pike Push-Up',
+    id: 'table-row',
+    name: 'Table Row',
+    slug: 'table-row',
     category: 'Upper Body',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Shoulders', 'Triceps', 'Back'],
-    equipment: 'None',
-    description: 'A vertical pushing exercise that shifts body weight onto the deltoids, building power for handstands.',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Upper Back', 'Lats', 'Biceps', 'Rear Deltoids'],
+    image: '/images/exercises/upper-body/table-row.webp',
+    equipment: 'Sturdy Table / Desk',
+    description: 'An accessible horizontal pulling exercise using a sturdy table edge to strengthen the upper back and arms.',
     instructions: [
-      'Start in a push-up position and walk feet forward, lifting hips into an inverted V shape',
-      'Look toward your feet to keep a neutral neck position',
-      'Lower your head forward down toward the floor, forming a tripod with your hands',
-      'Press diagonally back up to return to the starting pike position'
+      'Lie underneath a sturdy table and grip the edge with an overhand or neutral grip.',
+      'Keep your body rigid and straight with your heels on the floor.',
+      'Pull your chest up until it meets or approaches the underside of the table.',
+      'Lower yourself back down in a controlled motion.'
     ],
     commonMistakes: [
-      'Lowering head straight between hands instead of forward',
-      'Allowing hips to drop during the movement',
-      'Bending knees excessively'
+      'Sagging hips during the pull',
+      'Using arms instead of driving with the upper back'
     ],
-    progressions: ['Feet-Elevated Pike Push-Up', 'Handstand Push-Up'],
-    regressions: ['Push-Up', 'Wall Handstand Hold']
+    progressions: [
+      'Inverted Row',
+      'Pull Up'
+    ],
+    regressions: [
+      'Higher incline row / Standing band row'
+    ]
   },
   {
-    id: '9',
-    name: 'Archer Push-Up',
-    category: 'Upper Body',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Chest', 'Triceps', 'Shoulders'],
-    equipment: 'None',
-    description: 'An asymmetric pressing pattern that overloads one arm while the other provides lateral support.',
-    instructions: [
-      'Assume a push-up position with hands placed significantly wider than shoulder-width',
-      'Lower your body toward one side, bending that elbow while keeping the opposite arm straight',
-      'Press back up through the bent arm to return to the center',
-      'Repeat on the opposite arm or alternate sides'
-    ],
-    commonMistakes: [
-      'Bending the assisting straight arm',
-      'Rotating the hips and torso sideways',
-      'Rushing the tempo and losing control'
-    ],
-    progressions: ['One-Arm Push-Up'],
-    regressions: ['Push-Up', 'Incline Archer Push-Up']
-  },
-  {
-    id: '10',
-    name: 'Decline Push-Up',
-    category: 'Upper Body',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Chest', 'Shoulders', 'Triceps'],
-    equipment: 'Chair',
-    description: 'An elevated-feet push-up variation that emphasizes the upper chest fibers and anterior deltoids.',
-    instructions: [
-      'Place your feet on a chair or bench and hands on the floor shoulder-width apart',
-      'Maintain a stiff plank line from shoulders to ankles',
-      'Lower your chest to the floor with elbows bent at 45 degrees',
-      'Press firmly through your palms to return to full lockout'
-    ],
-    commonMistakes: [
-      'Arching or sagging at the lumbar spine',
-      'Placing hands too far forward relative to shoulders',
-      'Dropping the chin to reach the floor early'
-    ],
-    progressions: ['Pike Push-Up', 'One-Arm Push-Up'],
-    regressions: ['Push-Up', 'Incline Push-Up']
-  },
-  {
-    id: '11',
-    name: 'Hindu Push-Up',
-    category: 'Upper Body',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Shoulders', 'Chest', 'Triceps'],
-    equipment: 'None',
-    description: 'A dynamic multi-plane pushing pattern that combines shoulder pressing, chest pressing, and spinal mobility.',
-    instructions: [
-      'Begin in a downward dog position with hips high and feet shoulder-width',
-      'Sweep your head down toward the floor by bending elbows',
-      'Swoop your chest forward between your hands and push up into cobra pose with hips near floor',
-      'Reverse or press back up into downward dog position'
-    ],
-    commonMistakes: [
-      'Rushing through the bottom sweeping transition',
-      'Hyperextending the lower back without core control',
-      'Incomplete shoulder extension in top position'
-    ],
-    progressions: ['Dive Bomber Push-Up', 'Pike Push-Up'],
-    regressions: ['Push-Up', 'Incline Push-Up']
-  },
-  {
-    id: '12',
-    name: 'Handstand Push-Up',
-    category: 'Upper Body',
-    difficulty: 'Advanced',
-    primaryMuscles: ['Shoulders', 'Triceps', 'Back'],
-    equipment: 'Wall',
-    description: 'The pinnacle bodyweight vertical pressing movement, lifting total body weight entirely through the shoulders.',
-    instructions: [
-      'Kick up into a wall handstand with hands shoulder-width apart',
-      'Maintain a rigid core and hollow body hold',
-      'Lower your head forward toward the floor to form a tripod position',
-      'Press aggressively through your palms to return to full handstand extension'
-    ],
-    commonMistakes: [
-      'Arching back heavily into a banana shape',
-      'Lowering head straight down between hands',
-      'Flaring elbows outward during the press'
-    ],
-    progressions: ['Freestanding Handstand Push-Up', 'Deficit Handstand Push-Up'],
-    regressions: ['Wall Handstand Hold', 'Pike Push-Up']
-  },
-  {
-    id: '13',
-    name: 'One-Arm Push-Up',
-    category: 'Upper Body',
-    difficulty: 'Advanced',
-    primaryMuscles: ['Chest', 'Triceps', 'Shoulders'],
-    equipment: 'None',
-    description: 'An extreme unilateral pushing exercise demanding tremendous chest strength and anti-rotational core stability.',
-    instructions: [
-      'Set up in push-up position with feet wide apart for balance',
-      'Place working hand under center of chest and place non-working hand behind lower back',
-      'Lower chest to floor while maintaining hips parallel to ground',
-      'Press back up forcefully without twisting shoulders or hips'
-    ],
-    commonMistakes: [
-      'Excessive twisting of hips and torso',
-      'Spreading weight unevenly',
-      'Incomplete depth at bottom'
-    ],
-    progressions: ['Single-Leg One-Arm Push-Up'],
-    regressions: ['Archer Push-Up', 'Incline Archer Push-Up']
-  },
-  {
-    id: '14',
+    id: 'superman',
     name: 'Superman',
+    slug: 'superman',
     category: 'Upper Body',
     difficulty: 'Beginner',
-    primaryMuscles: ['Back', 'Glutes', 'Shoulders'],
-    equipment: 'None',
-    description: 'A floor-based posterior chain activation drill that targets the erector spinae, upper back, and glutes.',
+    primaryMuscles: ['Erector Spinae', 'Glutes', 'Upper Back'],
+    image: '/images/exercises/upper-body/superman.webp',
+    equipment: 'Bodyweight',
+    description: 'A prone bodyweight extension exercise strengthening the lower back and posterior chain.',
     instructions: [
-      'Lie face down on the floor with arms extended straight overhead and legs straight',
-      'Engage your glutes and lower back to simultaneously lift your chest, arms, and legs a few inches off the ground',
-      'Pause at the top of the lift for 1-2 seconds while squeezing your upper back muscles',
-      'Slowly lower back down to the starting position under full control'
+      'Lie face down on the floor with your arms extended straight overhead and legs straight.',
+      'Simultaneously lift your arms, chest, and straight legs a few inches off the floor.',
+      'Squeeze your lower back and glutes at the top position for a brief moment.',
+      'Lower back down with control to complete the rep.'
     ],
     commonMistakes: [
       'Hyperextending the neck by looking straight up',
-      'Jerking forcefully instead of lifting with controlled muscular contraction',
-      'Holding breath during the hold phase'
+      'Jerking limbs upward'
     ],
-    progressions: ['Reverse Snow Angel', 'Prone Cobra'],
-    regressions: ['Alternating Superman']
+    progressions: [
+      'Weighted Superman Extension',
+      'Back Extension on Bench'
+    ],
+    regressions: [
+      'Bird-Dog',
+      'Single-arm/leg lifts'
+    ]
   },
   {
-    id: '15',
-    name: 'Reverse Snow Angel',
-    category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Back', 'Shoulders'],
-    equipment: 'None',
-    description: 'A continuous prone scapular mobilization drill that builds upper back endurance and scapular tracking without equipment.',
-    instructions: [
-      'Lie face down with forehead resting on the floor and arms extended down by your sides, palms facing down',
-      'Lift your chest slightly and elevate your hands an inch or two off the floor',
-      'Slowly sweep your arms in a wide arc outward and up over your head while keeping them straight',
-      'Reverse the smooth arcing movement to bring arms back down to your sides'
-    ],
-    commonMistakes: [
-      'Letting hands drag along the floor during the arc',
-      'Over-arching the lumbar spine',
-      'Bending the elbows to compensate for shoulder mobility limitations'
-    ],
-    progressions: ['Prone Cobra'],
-    regressions: ['Prone Y-T-W Raises', 'Superman']
-  },
-  {
-    id: '16',
+    id: 'prone-cobra',
     name: 'Prone Cobra',
+    slug: 'prone-cobra',
     category: 'Upper Body',
     difficulty: 'Beginner',
-    primaryMuscles: ['Back', 'Shoulders'],
-    equipment: 'None',
-    description: 'An essential postural isometric drill that strengthens the rhomboids, middle/lower trapezius, and shoulder external rotators.',
+    primaryMuscles: ['Cervical and Thoracic Extensors', 'Scapular Retractors'],
+    image: '/images/exercises/upper-body/prone-cobra.webp',
+    equipment: 'Bodyweight',
+    description: 'An isometric back extension holding the upper chest off the floor with externally rotated arms to improve posture.',
     instructions: [
-      'Lie face down with legs extended and arms down by your sides, palms down',
-      'Lifting your chest off the floor, externally rotate your shoulders so your thumbs point up toward the ceiling',
-      'Squeeze your shoulder blades down and together while keeping your chin tucked',
-      'Hold the top position for the target duration while breathing continuously'
+      'Lie face down with your arms resting by your sides, palms facing outward.',
+      'Lift your chest and hands slightly off the floor, pinching your shoulder blades together.',
+      'Turn your thumbs toward the ceiling and hold your neck in a neutral position.',
+      'Hold this contracted posture for the required time before releasing.'
     ],
     commonMistakes: [
-      'Leading with the head and craning the neck backward',
-      'Flaring thumbs downward instead of pointing toward the ceiling',
-      'Shrugging shoulders up toward the ears'
+      'Lifting the chin too high',
+      'Failing to externally rotate the shoulders'
     ],
-    progressions: ['Reverse Snow Angel'],
-    regressions: ['Superman', 'Prone T-Raises']
+    progressions: [
+      'Prone Y-T-W Raises',
+      'Weighted Cobra Hold'
+    ],
+    regressions: [
+      'Seated Posture Hold',
+      'Incline Cobra'
+    ]
+  },
+  {
+    id: 'reverse-snow-angel',
+    name: 'Reverse Snow Angel',
+    slug: 'reverse-snow-angel',
+    category: 'Upper Body',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Upper Back', 'Rhomboids', 'Rear Deltoids', 'Trapezius'],
+    image: '/images/exercises/upper-body/reverse-snow-angel.webp',
+    equipment: 'Bodyweight',
+    description: 'A prone shoulder mobility and strengthening exercise mimicking snow angels facing downward.',
+    instructions: [
+      'Lie face down on the floor with your arms resting by your sides and palms facing up.',
+      'Hover your hands and chest slightly above the ground.',
+      'Sweep your arms in an arc overhead similar to a snow angel motion.',
+      'Return your arms along your sides with control while maintaining the hover.'
+    ],
+    commonMistakes: [
+      'Allowing hands to touch or rest on the floor during movement',
+      'Rushing reps'
+    ],
+    progressions: [
+      'Prone Y-T-W Raises with light plates'
+    ],
+    regressions: [
+      'Seated Rear Delt Raise'
+    ]
+  },
+  {
+    id: 'prone-y-t-w-raises',
+    name: 'Prone Y-T-W Raises',
+    slug: 'prone-y-t-w-raises',
+    category: 'Upper Body',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Lower/Middle Trapezius', 'Rhomboids', 'Rotator Cuff'],
+    image: '/images/exercises/upper-body/prone-y-t-w-raises.webp',
+    equipment: 'Bodyweight',
+    description: 'A series of arm raises performed face down to strengthen the scapular stabilizers and rotator cuff muscles.',
+    instructions: [
+      'Lie face down on the floor or an incline bench.',
+      'Raise your arms at a Y angle, then a T angle, and finally a W angle relative to your torso.',
+      'Squeeze your shoulder blades together with each raise, keeping arms straight during Y and T.',
+      'Lower your arms back down smoothly between each repetition.'
+    ],
+    commonMistakes: [
+      'Using too much momentum',
+      'Bending elbows during Y and T raises'
+    ],
+    progressions: [
+      'Weighted Y-T-W Raises on Incline Bench'
+    ],
+    regressions: [
+      'Standing Y-T-W Raises against a wall'
+    ]
   }
 ];
+
+export default upperBodyExercises;

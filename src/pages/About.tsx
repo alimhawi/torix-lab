@@ -71,7 +71,7 @@ export default function About() {
                 <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-br from-teal-50 to-slate-100 border border-teal-100/80 flex items-center justify-center overflow-hidden shadow-sm">
                   {!imageError ? (
                     <img
-                      src="/images/profile.png"
+                      src="/images/profile.webp"
                       alt={site.creator}
                       onError={() => setImageError(true)}
                       className="w-full h-full object-cover object-center rounded-2xl"

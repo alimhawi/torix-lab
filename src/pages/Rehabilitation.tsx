@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, AlertTriangle, ClipboardList, Dumbbell, TrendingUp, CheckCircle, Activity } from 'lucide-react';
+import { ChevronDown, ChevronRight, AlertTriangle, ClipboardList, TrendingUp, CheckCircle, Activity } from 'lucide-react';
 
 type InjuryProtocol = {
   id: string;

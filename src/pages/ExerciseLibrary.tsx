@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Filter, ChevronDown, X, Target, Zap, AlertCircle, TrendingUp, ArrowUpDown, Heart } from 'lucide-react';
 import { exercises, type Exercise } from '../data/exercises';
-import inclinePushUpTop from '../assets/exercises/incline_push_up_top.png';
+import ExerciseHero from "../components/ExerciseHero.tsx";
 
 const categories = [
   'All',
@@ -53,39 +53,16 @@ function ExerciseModal({ exercise, onClose, isFavorite, onToggleFavorite }: Exer
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-white rounded-3xl shadow-elevated max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up z-10">
-        <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-slate-100 px-6 py-4 flex items-center justify-between rounded-t-3xl z-10">
-          <div>
-            <h2 className="text-lg font-bold text-slate-900">{exercise.name}</h2>
-            <p className="text-sm text-slate-500">{exercise.category} · {exercise.equipment}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => onToggleFavorite(exercise.id)}
-              aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-              className="p-2 rounded-lg bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
-            >
-              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-rose-500 text-rose-500' : 'text-slate-500'}`} />
-            </button>
-            <button
-              onClick={onClose}
-              aria-label="Close modal"
-              className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
         <div className="p-6 space-y-6">
-          {(exercise.id === "incline-push-up" || exercise.name === "Incline Push-Up") && (
-            <div className="-mx-6 -mt-6 mb-6">
-              <img
-                src={inclinePushUpTop}
-                alt={exercise.name}
-                className="w-full h-auto object-cover rounded-xl"
-              />
-            </div>
-          )}
+          <ExerciseHero
+            title={exercise.name}
+            image={exercise.image}
+            category={exercise.category}
+            equipment={exercise.equipment}
+            isFavorite={isFavorite}
+            onToggleFavorite={() => onToggleFavorite(exercise.id)}
+            onClose={onClose}
+          />
 
           <div className="flex flex-wrap gap-2">
             <span className={`${difficultyColors[exercise.difficulty] || 'badge bg-slate-100'} badge`}>
@@ -206,9 +183,6 @@ export default function ExerciseLibrary() {
     setShowFavoritesOnly(false);
   };
 
-  // ==========================================
-  // دالة الفلترة الصارمة والمصححة بالكامل
-  // ==========================================
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     const selCat = category.trim().toLowerCase();
@@ -216,10 +190,7 @@ export default function ExerciseLibrary() {
     const selMuscle = muscle.trim().toLowerCase();
 
     return exercises.filter((e) => {
-      // 1. فلتر المفضلة
       const matchFav = !showFavoritesOnly || favorites.includes(e.id);
-
-      // 2. فلتر النص المكتوب في البحث
       const matchSearch =
         !q ||
         (e.name && e.name.toLowerCase().includes(q)) ||
@@ -228,21 +199,17 @@ export default function ExerciseLibrary() {
         (Array.isArray(e.primaryMuscles) &&
           e.primaryMuscles.some((m) => m.toLowerCase().includes(q)));
 
-      // 3. فلتر القسم (Category) - مطابقة دقيقة
       const exCat = (e.category || '').trim().toLowerCase();
       const matchCat = selCat === 'all' || exCat === selCat;
 
-      // 4. فلتر مستوى الصعوبة (Difficulty)
       const exDiff = (e.difficulty || '').trim().toLowerCase();
       const matchDiff = selDiff === 'all' || exDiff === selDiff;
 
-      // 5. فلتر العضلة (Muscle)
       const matchMuscle =
         selMuscle === 'all' ||
         (Array.isArray(e.primaryMuscles) &&
           e.primaryMuscles.some((m) => m.trim().toLowerCase() === selMuscle));
 
-      // يجب أن تتحقق جميع الشروط معاً بـ AND (&&)
       return matchFav && matchSearch && matchCat && matchDiff && matchMuscle;
     });
   }, [search, category, difficulty, muscle, showFavoritesOnly, favorites]);
@@ -413,6 +380,11 @@ export default function ExerciseLibrary() {
                   onClick={() => setSelected(ex)}
                   className="card-hover group cursor-pointer relative"
                 >
+                  <img
+                    src="/logos/torix-mark-black.svg"
+                    alt="Torix Mark"
+                    className="absolute top-3 left-3 z-10 h-[18px] w-auto pointer-events-none"
+                  />
                   <button
                     onClick={(e) => toggleFavorite(ex.id, e)}
                     aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
@@ -425,10 +397,10 @@ export default function ExerciseLibrary() {
                     />
                   </button>
 
-                  <div className="bg-gradient-to-br from-teal-50 to-slate-50 rounded-xl h-32 flex items-center justify-center mb-4 border border-slate-100 overflow-hidden">
-                    {ex.id === "incline-push-up" || ex.name === "Incline Push-Up" ? (
+                  <div className="bg-white rounded-xl h-32 flex items-center justify-center mb-4 border border-slate-100 overflow-hidden">
+                    {ex.image ? (
                       <img
-                        src={inclinePushUpTop}
+                        src={ex.image}
                         alt={ex.name}
                         className="w-full h-full object-cover"
                       />

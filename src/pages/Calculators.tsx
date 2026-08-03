@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
-  calcBMI, bmiCategory, calcBMR, calcTDEE, calcFFMI,
-  calcIdealWeight, calcHydration, calc1RM, calcPace, calcWaistToHeightRatio
+  calcBMI, bmiCategory, calcBMR, calcTDEE, calcFFMIAdvanced,
+  calcIdealWeight, calcHydration, calc1RM, calcPace, calcWaistToHeightRatio, calcNavyBodyFat
 } from '@/lib/calculations';
 import { Calculator, ChevronDown } from 'lucide-react';
 
@@ -39,6 +39,26 @@ const calculators: {
       return [
         { label: 'BMI', value: bmi.toFixed(1), note: catLabel },
         { label: 'Healthy Range', value: '18.5 – 24.9 kg/m²' },
+        { label: 'Method', value: 'WHO BMI Classification', note: 'Does not distinguish fat mass from lean mass.' },
+      ];
+    },
+  },
+  {
+    id: 'navy_body_fat', name: 'Body Fat Calculator', description: 'Anthropometric body composition estimation.',
+    category: 'Body Composition', color: 'teal',
+    inputs: [
+      { id: 'gender', label: 'Sex', type: 'select', placeholder: '', options: [{ value: 'male', label: 'Male' }, { value: 'female', label: 'Female' }] },
+      { id: 'height', label: 'Height', type: 'number', placeholder: '178', unit: 'cm' },
+      { id: 'neck', label: 'Neck Circumference', type: 'number', placeholder: '38', unit: 'cm' },
+      { id: 'waist', label: 'Waist Circumference', type: 'number', placeholder: '82', unit: 'cm' },
+      { id: 'hip', label: 'Hip Circumference (Female only)', type: 'number', placeholder: '95', unit: 'cm', showIf: (vals) => vals.gender === 'female' },
+    ],
+    compute: (v) => {
+      const bf = calcNavyBodyFat(v.gender || 'male', +v.height, +v.neck, +v.waist, v.hip ? +v.hip : undefined);
+      return [
+        { label: 'Estimated Body Fat %', value: `${bf.toFixed(1)}%` },
+        { label: 'Method', value: 'U.S. Navy Body Fat Equation' },
+        { label: 'Note', value: 'This estimate is based on the validated U.S. Navy anthropometric equation and should not be interpreted as a laboratory body composition measurement such as DEXA.' },
       ];
     },
   },
@@ -53,7 +73,10 @@ const calculators: {
     ],
     compute: (v) => {
       const bmr = calcBMR(+v.weight, +v.height, +v.age, v.gender || 'male');
-      return [{ label: 'BMR', value: `${Math.round(bmr)} kcal/day`, note: 'Mifflin-St Jeor equation' }];
+      return [
+        { label: 'BMR', value: `${Math.round(bmr)} kcal/day` },
+        { label: 'Method', value: 'Mifflin-St Jeor Equation', note: 'Validated metabolic rate estimation formula.' },
+      ];
     },
   },
   {
@@ -79,6 +102,7 @@ const calculators: {
         { label: 'TDEE', value: `${Math.round(tdee)} kcal/day` },
         { label: 'For Weight Loss', value: `${Math.round(tdee - 500)} kcal/day` },
         { label: 'For Muscle Gain', value: `${Math.round(tdee + 300)} kcal/day` },
+        { label: 'Method', value: 'Mifflin-St Jeor Equation + Standard Physical Activity Multipliers' },
       ];
     },
   },
@@ -88,17 +112,25 @@ const calculators: {
     inputs: [
       { id: 'weight', label: 'Weight', type: 'number', placeholder: '80', unit: 'kg' },
       { id: 'height', label: 'Height', type: 'number', placeholder: '178', unit: 'cm' },
+      { id: 'gender', label: 'Sex', type: 'select', placeholder: '', options: [{ value: 'male', label: 'Male' }, { value: 'female', label: 'Female' }] },
+      { id: 'bodyFat', label: 'Body Fat % (Optional - Enables Mode A)', type: 'number', placeholder: '15', unit: '%' },
     ],
     compute: (v) => {
-      const ffmiVal = calcFFMI(+v.weight, +v.height);
-      const interpretation = ffmiVal < 18 ? 'Below average' : ffmiVal < 20 ? 'Average' : ffmiVal < 22 ? 'Above average' : ffmiVal < 25 ? 'Excellent' : 'Elite';
-      return [
-        { label: 'FFMI', value: `${ffmiVal.toFixed(2)} kg/m²`, note: interpretation },
+      const bfInput = v.bodyFat ? parseFloat(v.bodyFat) : undefined;
+      const result = calcFFMIAdvanced(+v.weight, +v.height, v.gender || 'male', bfInput);
+      
+      const res: CalcResult = [
+        { label: result.displayName, value: `${result.ffmi.toFixed(2)} kg/m²`, note: result.isEstimated ? 'Estimated LBM via Boer Equation' : 'Direct calculation' },
       ];
+      if (result.normalizedFfmi !== undefined) {
+        res.push({ label: 'Normalized FFMI', value: `${result.normalizedFfmi.toFixed(2)} kg/m²`, note: 'Height-normalized to 1.80m' });
+      }
+      res.push({ label: 'Method', value: result.isEstimated ? 'Boer Lean Body Mass Equation' : 'Direct calculation from user-entered body fat percentage.' });
+      return res;
     },
   },
   {
-    id: 'ideal_weight', name: 'Ideal Weight', description: 'Ideal body weight range for your height.',
+    id: 'ideal_weight', name: 'Estimated Ideal Body Weight', description: 'Ideal body weight range for your height.',
     category: 'Body Composition', color: 'green',
     inputs: [
       { id: 'height', label: 'Height', type: 'number', placeholder: '178', unit: 'cm' },
@@ -107,8 +139,8 @@ const calculators: {
     compute: (v) => {
       const ideal = calcIdealWeight(+v.height, v.gender || 'male');
       return [
-        { label: 'Ideal Weight', value: `${ideal.toFixed(1)} kg`, note: 'Devine formula' },
-        { label: 'Healthy BMI Range', value: `${(18.5 * (+v.height / 100) ** 2).toFixed(1)} – ${(24.9 * (+v.height / 100) ** 2).toFixed(1)} kg` },
+        { label: 'Estimated Ideal Weight', value: `${ideal.toFixed(1)} kg` },
+        { label: 'Method', value: 'Devine Formula' },
       ];
     },
   },
@@ -128,8 +160,8 @@ const calculators: {
     compute: (v) => {
       const h = calcHydration(+v.weight, v.activity || 'moderate');
       return [
-        { label: 'Daily Water', value: `${h.toFixed(1)} L`, note: 'Increase on training days' },
-        { label: 'Hourly Average', value: `${(h / 16).toFixed(2)} L/hr`, note: 'During waking hours' },
+        { label: 'Daily Water', value: `${h.toFixed(1)} L` },
+        { label: 'Method', value: 'General daily hydration estimate', note: 'General daily hydration estimate (not a clinical recommendation).' },
       ];
     },
   },
@@ -143,10 +175,8 @@ const calculators: {
     compute: (v) => {
       const orm = calc1RM(+v.weight, +v.reps);
       return [
-        { label: 'Estimated 1RM', value: `${orm.toFixed(1)} kg`, note: 'Epley formula' },
-        { label: '90% 1RM (3-5 reps)', value: `${(orm * 0.9).toFixed(1)} kg` },
-        { label: '80% 1RM (8-12 reps)', value: `${(orm * 0.8).toFixed(1)} kg` },
-        { label: '70% 1RM (15-20 reps)', value: `${(orm * 0.7).toFixed(1)} kg` },
+        { label: 'Estimated 1RM', value: `${orm.toFixed(1)} kg` },
+        { label: 'Method', value: 'Epley Equation' },
       ];
     },
   },
@@ -163,6 +193,7 @@ const calculators: {
       return [
         { label: 'Pace', value: `${pace} / km` },
         { label: 'Speed', value: `${speedKmh.toFixed(2)} km/h` },
+        { label: 'Method', value: 'Standard distance/time velocity calculation' },
       ];
     },
   },
@@ -178,7 +209,8 @@ const calculators: {
       const risk = whr < 0.4 ? 'Underweight risk' : whr < 0.5 ? 'Healthy' : whr < 0.6 ? 'Increased risk' : 'High risk';
       return [
         { label: 'WHtR', value: whr.toFixed(3), note: risk },
-        { label: 'Healthy Range', value: '< 0.50' },
+        { label: 'Healthy Cutoff', value: '< 0.50' },
+        { label: 'Method', value: 'Waist-to-Height Ratio (WHtR)' },
       ];
     },
   },
@@ -290,7 +322,7 @@ export default function Calculators() {
 
   const filtered = activeCategory === 'All'
     ? calculators
-    : calculators.filter ? calculators.filter(c => c.category === activeCategory) : calculators;
+    : calculators.filter(c => c.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-surface page-enter">
@@ -305,7 +337,6 @@ export default function Calculators() {
       </div>
 
       <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
-        {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((c) => (
             <button

@@ -4,9 +4,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '1',
     name: 'Jumping Jacks',
+    slug: 'jumping-jacks',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Full Body', 'Calves', 'Shoulders'],
+    image: '/images/exercises/warm-up/jumping-jacks.webp',
     equipment: 'None',
     description: 'A classic rhythmic full-body exercise designed to rapidly elevate heart rate, increase core body temperature, and stimulate system-wide blood flow.',
     instructions: [
@@ -26,9 +28,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '2',
     name: 'High Knees',
+    slug: 'high-knees',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Hip Flexors', 'Quadriceps', 'Core'],
+    image: '/images/exercises/warm-up/high-knees.webp',
     equipment: 'None',
     description: 'A high-cadence dynamic drill that activates the hip flexors and core while elevating heart rate and preparing lower body nervous system reactivity.',
     instructions: [
@@ -48,9 +52,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '3',
     name: 'Butt Kicks',
+    slug: 'butt-kicks',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Hamstrings', 'Quadriceps', 'Calves'],
+    image: '/images/exercises/warm-up/butt-kicks.webp',
     equipment: 'None',
     description: 'A fast-paced running drill emphasizing rapid hamstring contraction and dynamic quadriceps lengthening to prime knees and legs for intense movement.',
     instructions: [
@@ -70,9 +76,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '4',
     name: 'Dynamic Arm Circles and Cross-Hugs',
+    slug: 'dynamic-arm-circles-and-cross-hugs',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Shoulders', 'Chest', 'Upper Back'],
+    image: '/images/exercises/warm-up/dynamic-arm-circles-and-cross-hugs.webp',
     equipment: 'None',
     description: 'A rhythmic upper-body activation drill that lubricates the glenohumeral joint, increases shoulder temperature, and dynamically opens the chest and back.',
     instructions: [
@@ -92,9 +100,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '5',
     name: 'Wall Leg Swings',
+    slug: 'wall-leg-swings',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Hips', 'Hamstrings', 'Adductors', 'Glutes'],
+    image: '/images/exercises/warm-up/wall-leg-swings.webp',
     equipment: 'Wall',
     description: 'A multi-directional dynamic hip drill using wall support to prime the hip capsule through active sagittal and frontal plane swings.',
     instructions: [
@@ -114,9 +124,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '6',
     name: 'Toy Soldiers',
+    slug: 'toy-soldiers',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Hamstrings', 'Hip Flexors', 'Core'],
+    image: '/images/exercises/warm-up/toy-soldiers.webp',
     equipment: 'None',
     description: 'An upright dynamic movement that actively engages hip flexors and core while dynamically lengthening hamstrings through controlled straight-leg kicks.',
     instructions: [
@@ -136,9 +148,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '7',
     name: 'Knee Hug to Toe Raise',
+    slug: 'knee-hug-to-toe-raise',
     category: 'Warm-Up',
     difficulty: 'Beginner',
     primaryMuscles: ['Glutes', 'Calves', 'Core'],
+    image: '/images/exercises/warm-up/knee-hug-to-toe-raise.webp',
     equipment: 'None',
     description: 'A balance and activation drill that primes single-leg stability, glute engagement, and plantarflexion through the ankles.',
     instructions: [
@@ -158,9 +172,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '8',
     name: 'Inchworm to Plank',
+    slug: 'inchworm-to-plank',
     category: 'Intermediate',
     difficulty: 'Intermediate',
     primaryMuscles: ['Core', 'Shoulders', 'Hamstrings'],
+    image: '/images/exercises/warm-up/inchworm-to-plank.webp',
     equipment: 'Floor',
     description: 'A dynamic total-body walkout pattern that activates shoulder stabilizers, braces the core, and dynamically lengthens the posterior chain.',
     instructions: [
@@ -180,9 +196,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '9',
     name: 'World\'s Greatest Stretch (Dynamic)',
+    slug: 'world-s-greatest-stretch-dynamic',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hips', 'Thoracic Spine', 'Glutes', 'Hamstrings'],
+    image: '/images/exercises/warm-up/world-s-greatest-stretch-dynamic.webp',
     equipment: 'Floor',
     description: 'The premier dynamic warm-up sequence that simultaneously activates hip flexors, glutes, hamstrings, and thoracic rotation in a single fluid flow.',
     instructions: [
@@ -202,9 +220,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '10',
     name: 'Walking Lunge with Rotation',
+    slug: 'walking-lunge-with-rotation',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Core', 'Thoracic Spine'],
+    image: '/images/exercises/warm-up/walking-lunge-with-rotation.webp',
     equipment: 'None',
     description: 'A dynamic multi-planar lunge pattern that fires up glutes and quads while introducing thoracic rotation to activate core stabilizers.',
     instructions: [
@@ -224,9 +244,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '11',
     name: 'Dynamic Squat to Overhead Reach',
+    slug: 'dynamic-squat-to-overhead-reach',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Glutes', 'Shoulders', 'Thoracic Spine'],
+    image: '/images/exercises/warm-up/dynamic-squat-to-overhead-reach.webp',
     equipment: 'None',
     description: 'A full-body mobility and activation drill that primes lower body squatting mechanics while opening the thoracic spine and overhead shoulder girdle.',
     instructions: [
@@ -246,9 +268,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '12',
     name: 'Lateral Shuffle',
+    slug: 'lateral-shuffle',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Gluteus Medius', 'Adductors', 'Calves'],
+    image: '/images/exercises/warm-up/lateral-shuffle.webp',
     equipment: 'None',
     description: 'A frontal-plane movement drill that activates lateral hip stabilizers, primes rapid footwork, and prepares knees for lateral movement.',
     instructions: [
@@ -268,9 +292,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '13',
     name: 'Carioca',
+    slug: 'carioca',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hips', 'Obliques', 'Core'],
+    image: '/images/exercises/warm-up/carioca.webp',
     equipment: 'None',
     description: 'A dynamic transverse-plane warm-up drill that improves hip dissociation, cross-body coordination, and foot quickness.',
     instructions: [
@@ -290,9 +316,11 @@ export const warmUpExercises: Exercise[] = [
   {
     id: '14',
     name: 'Pogo Hops',
+    slug: 'pogo-hops',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
     primaryMuscles: ['Calves', 'Ankles', 'Quadriceps'],
+    image: '/images/exercises/warm-up/pogo-hops.webp',
     equipment: 'None',
     description: 'A low-amplitude elastic jumping drill designed to stiffen the ankle complex, condition the Achilles tendon, and potentiate the central nervous system.',
     instructions: [

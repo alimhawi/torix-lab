@@ -72,7 +72,7 @@ export default function SignUp() {
         setSuccessMessage('Account created! Please check your email to confirm your account.');
         setLoading(false);
       }
-    } catch (err: any) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
       setLoading(false);
     }

@@ -4,9 +4,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '1',
     name: 'Neck Controlled Articular Rotations',
+    slug: 'neck-controlled-articular-rotations',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Neck', 'Upper Trapezius'],
+    image: '/images/exercises/mobility/neck-controlled-articular-rotations.webp',
     equipment: 'None',
     description: 'A controlled joint rotation drill designed to safely explore full cervical spine range of motion and maintain neck joint health.',
     instructions: [
@@ -27,9 +29,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '2',
     name: 'Wall Angels',
+    slug: 'wall-angels',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Shoulders', 'Back', 'Thoracic Spine'],
+    image: '/images/exercises/mobility/wall-angels.webp',
     equipment: 'Wall',
     description: 'A postural mobility drill that active-engages shoulder rotators and upper back muscles to restore overhead arm tracking against a wall.',
     instructions: [
@@ -49,9 +53,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '3',
     name: 'Quadruped Thoracic Rotation',
+    slug: 'quadruped-thoracic-rotation',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Thoracic Spine', 'Back'],
+    image: '/images/exercises/mobility/quadruped-thoracic-rotation.webp',
     equipment: 'None',
     description: 'An essential rotational mobility exercise for the mid-back that isolates thoracic rotation while anchoring the lower back.',
     instructions: [
@@ -72,9 +78,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '4',
     name: 'Segmental Cat-Cow',
+    slug: 'segmental-cat-cow',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Spine', 'Back', 'Core'],
+    image: '/images/exercises/mobility/segmental-cat-cow.webp',
     equipment: 'None',
     description: 'A controlled spinal articulation movement that restores bone-by-bone awareness and flexional mobility along the spine.',
     instructions: [
@@ -94,9 +102,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '5',
     name: 'Hip 90/90 Rotational Switch',
+    slug: 'hip-90-90-rotational-switch',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Hip Flexors', 'Glutes', 'Hip External Rotators'],
+    image: '/images/exercises/mobility/hip-90-90-rotational-switch.webp',
     equipment: 'None',
     description: 'A dynamic hip mobilization drill targeting both internal and external rotation essential for deep squatting and stride mechanics.',
     instructions: [
@@ -116,9 +126,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '6',
     name: 'Quadruped Adductor Rocking',
+    slug: 'quadruped-adductor-rocking',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Adductors', 'Hips'],
+    image: '/images/exercises/mobility/quadruped-adductor-rocking.webp',
     equipment: 'None',
     description: 'A dynamic inner-thigh and hip mobility pattern that improves groin flexibility and lateral pelvic control.',
     instructions: [
@@ -138,9 +150,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '7',
     name: 'Elephant Walk',
+    slug: 'elephant-walk',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Hamstrings', 'Calves'],
+    image: '/images/exercises/mobility/elephant-walk.webp',
     equipment: 'None',
     description: 'An active hamstring and calf mobilization exercise that lengthens the posterior leg chain through continuous knee flexion and extension.',
     instructions: [
@@ -160,9 +174,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '8',
     name: 'Knee-to-Wall Ankle Mobilization',
+    slug: 'knee-to-wall-ankle-mobilization',
     category: 'Mobility',
     difficulty: 'Beginner',
     primaryMuscles: ['Calves', 'Ankle Flexors'],
+    image: '/images/exercises/mobility/knee-to-wall-ankle-mobilization.webp',
     equipment: 'Wall',
     description: 'A targeted ankle dorsiflexion drill that mobilizes the talocrural joint to support deeper squat depth and reduce Achilles strain.',
     instructions: [
@@ -182,9 +198,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '9',
     name: 'Spiderman Lunge with Thoracic Reach',
+    slug: 'spiderman-lunge-with-thoracic-reach',
     category: 'Mobility',
     difficulty: 'Intermediate',
     primaryMuscles: ['Hip Flexors', 'Adductors', 'Thoracic Spine'],
+    image: '/images/exercises/mobility/spiderman-lunge-with-thoracic-reach.webp',
     equipment: 'None',
     description: 'A comprehensive full-body mobility dynamic drill opening the hips, groin, and thoracic spine simultaneously.',
     instructions: [
@@ -205,9 +223,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '10',
     name: 'Sidelying Thoracic Windmill',
+    slug: 'sidelying-thoracic-windmill',
     category: 'Mobility',
     difficulty: 'Intermediate',
     primaryMuscles: ['Thoracic Spine', 'Shoulders'],
+    image: '/images/exercises/mobility/sidelying-thoracic-windmill.webp',
     equipment: 'None',
     description: 'A restorative dynamic rotational stretch for upper back thoracic extension and shoulder girdle freedom.',
     instructions: [
@@ -227,9 +247,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '11',
     name: 'Deep Squat Mobilizer',
+    slug: 'deep-squat-mobilizer',
     category: 'Mobility',
     difficulty: 'Intermediate',
     primaryMuscles: ['Quadriceps', 'Hips', 'Calves', 'Thoracic Spine'],
+    image: '/images/exercises/mobility/deep-squat-mobilizer.webp',
     equipment: 'None',
     description: 'An integrated end-range lower body drill that improves ankle dorsiflexion, hip abduction, and upright thoracic stance.',
     instructions: [
@@ -249,9 +271,11 @@ export const mobilityExercises: Exercise[] = [
   {
     id: '12',
     name: 'Standing Shoulder CARs',
+    slug: 'standing-shoulder-cars',
     category: 'Mobility',
     difficulty: 'Intermediate',
     primaryMuscles: ['Shoulders', 'Rotator Cuff', 'Back'],
+    image: '/images/exercises/mobility/standing-shoulder-cars.webp',
     equipment: 'None',
     description: 'The definitive shoulder joint isolation drill for expanding active shoulder range of motion and joint resilience.',
     instructions: [

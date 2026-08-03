@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { calcTDEE, calcBMR, calcProtein } from '@/lib/calculations';
-import { Apple, Droplets, Zap, BarChart3, Info, ChevronRight } from 'lucide-react';
+import { calcTDEE, calcBMR } from '@/lib/calculations';
+import { Apple, Droplets, Zap, BarChart3, Info } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 

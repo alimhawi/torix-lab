@@ -4,9 +4,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '1',
     name: 'Dead Bug',
+    slug: 'dead-bug',
     category: 'Core',
     difficulty: 'Beginner',
     primaryMuscles: ['Core', 'Hip Flexors'],
+    image: '/images/exercises/core/dead-bug.webp',
     equipment: 'None',
     description: 'A fundamental anti-extension and cross-body coordination drill that teaches deep core engagement while limbs move independently.',
     instructions: [
@@ -26,9 +28,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '2',
     name: 'Bird-Dog',
+    slug: 'bird-dog',
     category: 'Core',
     difficulty: 'Beginner',
     primaryMuscles: ['Core', 'Back', 'Glutes'],
+    image: '/images/exercises/core/bird-dog.webp',
     equipment: 'None',
     description: 'A foundational anti-rotation and spinal stability drill that strengthens posterior core muscles and cross-body sling balance.',
     instructions: [
@@ -48,9 +52,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '3',
     name: 'Plank',
+    slug: 'plank',
     category: 'Core',
     difficulty: 'Beginner',
     primaryMuscles: ['Core', 'Shoulders', 'Glutes'],
+    image: '/images/exercises/core/plank.webp',
     equipment: 'None',
     description: 'The golden standard isometric anti-extension exercise for total anterior chain stability and shoulder girdle bracing.',
     instructions: [
@@ -70,9 +76,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '4',
     name: 'Side Plank',
+    slug: 'side-plank',
     category: 'Core',
     difficulty: 'Beginner',
     primaryMuscles: ['Obliques', 'Core', 'Gluteus Medius'],
+    image: '/images/exercises/core/side-plank.webp',
     equipment: 'None',
     description: 'An essential anti-lateral flexion exercise targeting obliques, transverse abdominis, and lateral hip stability.',
     instructions: [
@@ -92,9 +100,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '5',
     name: 'Reverse Crunch',
+    slug: 'reverse-crunch',
     category: 'Core',
     difficulty: 'Beginner',
     primaryMuscles: ['Core', 'Hip Flexors'],
+    image: '/images/exercises/core/reverse-crunch.webp',
     equipment: 'None',
     description: 'A spine-friendly trunk flexion exercise emphasizing lower abdominal control through posterior pelvic tilt without neck strain.',
     instructions: [
@@ -114,9 +124,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '6',
     name: 'Plank Shoulder Tap',
+    slug: 'plank-shoulder-tap',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Core', 'Shoulders', 'Obliques'],
+    image: '/images/exercises/core/plank-shoulder-tap.webp',
     equipment: 'None',
     description: 'A dynamic anti-rotation pattern requiring weight transfer across three points of contact while preserving pelvic alignment.',
     instructions: [
@@ -136,9 +148,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '7',
     name: 'Hollow Body Hold',
+    slug: 'hollow-body-hold',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Core', 'Hip Flexors', 'Quadriceps'],
+    image: '/images/exercises/core/hollow-body-hold.webp',
     equipment: 'None',
     description: 'A high-yield gymnastic compression exercise creating maximum anterior chain isometric tension with lower back floor contact.',
     instructions: [
@@ -158,9 +172,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '8',
     name: 'Bicycle Crunch',
+    slug: 'bicycle-crunch',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Obliques', 'Core', 'Hip Flexors'],
+    image: '/images/exercises/core/bicycle-crunch.webp',
     equipment: 'None',
     description: 'A dynamic rotational flexion movement combining cross-body oblique activation with continuous hip flexor compression.',
     instructions: [
@@ -180,9 +196,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '9',
     name: 'Towel Abdominal Rollout',
+    slug: 'towel-abdominal-rollout',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Core', 'Back', 'Shoulders'],
+    image: '/images/exercises/core/towel-abdominal-rollout.webp',
     equipment: 'Towel',
     description: 'An exceptional zero-equipment anti-extension rollout exercise utilizing towel friction on smooth floor to challenge core leverage.',
     instructions: [
@@ -202,9 +220,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '10',
     name: 'Chair Tuck L-Sit',
+    slug: 'chair-tuck-l-sit',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Core', 'Hip Flexors', 'Triceps'],
+    image: '/images/exercises/core/chair-tuck-l-sit.webp',
     equipment: 'Chair',
     description: 'An accessible gymnastics compression hold using a sturdy chair to develop hip flexor and lower abdominal strength.',
     instructions: [
@@ -224,9 +244,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '11',
     name: 'Floor Windshield Wipers',
+    slug: 'floor-windshield-wipers',
     category: 'Core',
     difficulty: 'Intermediate',
     primaryMuscles: ['Obliques', 'Core', 'Hip Flexors'],
+    image: '/images/exercises/core/floor-windshield-wipers.webp',
     equipment: 'None',
     description: 'A rotational control exercise targeting oblique strength, lumbo-pelvic stability, and active spinal mobility.',
     instructions: [
@@ -246,9 +268,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '12',
     name: 'Chair L-Sit Hold',
+    slug: 'chair-l-sit-hold',
     category: 'Core',
     difficulty: 'Advanced',
     primaryMuscles: ['Core', 'Hip Flexors', 'Quadriceps'],
+    image: '/images/exercises/core/chair-l-sit-hold.webp',
     equipment: 'Chair',
     description: 'The benchmark bodyweight core compression hold demanding elite abdominal engagement, hip flexor strength, and scapular depression.',
     instructions: [
@@ -268,9 +292,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '13',
     name: 'Side Plank Leg Lift',
+    slug: 'side-plank-leg-lift',
     category: 'Core',
     difficulty: 'Advanced',
     primaryMuscles: ['Obliques', 'Gluteus Medius', 'Core'],
+    image: '/images/exercises/core/side-plank-leg-lift.webp',
     equipment: 'None',
     description: 'An intense anti-lateral flexion and lateral hip integration hold that overloads lateral core stability under dynamic leverage.',
     instructions: [
@@ -290,9 +316,11 @@ export const coreExercises: Exercise[] = [
   {
     id: '14',
     name: 'Hollow Body Rock',
+    slug: 'hollow-body-rock',
     category: 'Core',
     difficulty: 'Advanced',
     primaryMuscles: ['Core', 'Hip Flexors', 'Quadriceps'],
+    image: '/images/exercises/core/hollow-body-rock.webp',
     equipment: 'None',
     description: 'A dynamic gymnastic core conditioning movement maintaining static hollow body tension while shifting center of mass.',
     instructions: [

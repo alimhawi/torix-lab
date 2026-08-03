@@ -12,7 +12,6 @@ import {
   Brain,
   Dumbbell,
   HeartPulse,
-  Salad,
   ShieldCheck,
   ChevronRight,
   CheckCircle,
