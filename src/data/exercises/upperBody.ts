@@ -303,35 +303,6 @@ export const upperBodyExercises: Exercise[] = [
     ]
   },
   {
-    id: 'wall-handstand-hold',
-    name: 'Wall Handstand Hold',
-    slug: 'wall-handstand-hold',
-    category: 'Upper Body',
-    difficulty: 'Advanced',
-    primaryMuscles: ['Shoulders', 'Upper Trapezius', 'Core', 'Triceps'],
-    image: '/images/exercises/upper-body/wall-handstand-hold.webp',
-    equipment: 'Wall',
-    description: 'An isometric upper-body strength and stability exercise supporting the body upside down against a wall.',
-    instructions: [
-      'Kick up into a handstand with your heels resting lightly against a sturdy wall.',
-      'Keep your arms fully locked out, head neutral, and core tight.',
-      'Push actively through your shoulders to elevate your body away from the floor.',
-      'Hold the position steadily for the prescribed duration.'
-    ],
-    commonMistakes: [
-      'Arching the lower back excessively',
-      'Shrugging shoulders into the ears'
-    ],
-    progressions: [
-      'Free-standing Handstand',
-      'Handstand Push Up'
-    ],
-    regressions: [
-      'Pike Hold',
-      'Incline Pike Hold'
-    ]
-  },
-  {
     id: 'handstand-push-up',
     name: 'Handstand Push Up',
     slug: 'handstand-push-up',
@@ -475,89 +446,6 @@ export const upperBodyExercises: Exercise[] = [
       'Single-arm/leg lifts'
     ]
   },
-  {
-    id: 'prone-cobra',
-    name: 'Prone Cobra',
-    slug: 'prone-cobra',
-    category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Cervical and Thoracic Extensors', 'Scapular Retractors'],
-    image: '/images/exercises/upper-body/prone-cobra.webp',
-    equipment: 'Bodyweight',
-    description: 'An isometric back extension holding the upper chest off the floor with externally rotated arms to improve posture.',
-    instructions: [
-      'Lie face down with your arms resting by your sides, palms facing outward.',
-      'Lift your chest and hands slightly off the floor, pinching your shoulder blades together.',
-      'Turn your thumbs toward the ceiling and hold your neck in a neutral position.',
-      'Hold this contracted posture for the required time before releasing.'
-    ],
-    commonMistakes: [
-      'Lifting the chin too high',
-      'Failing to externally rotate the shoulders'
-    ],
-    progressions: [
-      'Prone Y-T-W Raises',
-      'Weighted Cobra Hold'
-    ],
-    regressions: [
-      'Seated Posture Hold',
-      'Incline Cobra'
-    ]
-  },
-  {
-    id: 'reverse-snow-angel',
-    name: 'Reverse Snow Angel',
-    slug: 'reverse-snow-angel',
-    category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Upper Back', 'Rhomboids', 'Rear Deltoids', 'Trapezius'],
-    image: '/images/exercises/upper-body/reverse-snow-angel.webp',
-    equipment: 'Bodyweight',
-    description: 'A prone shoulder mobility and strengthening exercise mimicking snow angels facing downward.',
-    instructions: [
-      'Lie face down on the floor with your arms resting by your sides and palms facing up.',
-      'Hover your hands and chest slightly above the ground.',
-      'Sweep your arms in an arc overhead similar to a snow angel motion.',
-      'Return your arms along your sides with control while maintaining the hover.'
-    ],
-    commonMistakes: [
-      'Allowing hands to touch or rest on the floor during movement',
-      'Rushing reps'
-    ],
-    progressions: [
-      'Prone Y-T-W Raises with light plates'
-    ],
-    regressions: [
-      'Seated Rear Delt Raise'
-    ]
-  },
-  {
-    id: 'prone-y-t-w-raises',
-    name: 'Prone Y-T-W Raises',
-    slug: 'prone-y-t-w-raises',
-    category: 'Upper Body',
-    difficulty: 'Beginner',
-    primaryMuscles: ['Lower/Middle Trapezius', 'Rhomboids', 'Rotator Cuff'],
-    image: '/images/exercises/upper-body/prone-y-t-w-raises.webp',
-    equipment: 'Bodyweight',
-    description: 'A series of arm raises performed face down to strengthen the scapular stabilizers and rotator cuff muscles.',
-    instructions: [
-      'Lie face down on the floor or an incline bench.',
-      'Raise your arms at a Y angle, then a T angle, and finally a W angle relative to your torso.',
-      'Squeeze your shoulder blades together with each raise, keeping arms straight during Y and T.',
-      'Lower your arms back down smoothly between each repetition.'
-    ],
-    commonMistakes: [
-      'Using too much momentum',
-      'Bending elbows during Y and T raises'
-    ],
-    progressions: [
-      'Weighted Y-T-W Raises on Incline Bench'
-    ],
-    regressions: [
-      'Standing Y-T-W Raises against a wall'
-    ]
-  }
 ];
 
 export default upperBodyExercises;

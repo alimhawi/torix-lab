@@ -1,340 +1,392 @@
-import { Exercise } from './types';
+export interface Exercise {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  primaryMuscles: string[];
+  image: string;
+  equipment: string;
+  description: string;
+  instructions: string[];
+  commonMistakes: string[];
+  progressions: string[];
+  regressions: string[];
+}
 
 export const warmUpExercises: Exercise[] = [
   {
-    id: '1',
+    id: 'jumping-jacks',
     name: 'Jumping Jacks',
     slug: 'jumping-jacks',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Full Body', 'Calves', 'Shoulders'],
+    primaryMuscles: ['Full Body', 'Cardiovascular System', 'Calves', 'Shoulders'],
     image: '/images/exercises/warm-up/jumping-jacks.webp',
-    equipment: 'None',
-    description: 'A classic rhythmic full-body exercise designed to rapidly elevate heart rate, increase core body temperature, and stimulate system-wide blood flow.',
+    equipment: 'Bodyweight',
+    description: 'A classic full-body calisthenic movement designed to elevate heart rate, increase circulation, and Warm-Up major muscle groups.',
     instructions: [
-      'Stand tall with feet together and arms resting at your sides',
-      'Jump feet outward wider than shoulder-width while sweeping arms overhead in a smooth arc',
-      'Lightly land on the balls of your feet and immediately reverse the motion',
-      'Maintain a consistent, bouncy rhythm while breathing continuously'
+      'Stand upright with feet together and arms at your sides.',
+      'Simultaneously jump your feet out to the sides while swinging your arms overhead.',
+      'Quickly reverse the movement by jumping your feet back together and bringing your arms to your sides.',
+      'Maintain a steady, rhythmic pace.'
     ],
     commonMistakes: [
-      'Landing heavily on flat feet or heels',
-      'Locking out knees aggressively during the landing phase',
-      'Shortening arm sweep range overhead'
+      'Landing heavily on heels',
+      'Flailing arms without control'
     ],
-    progressions: ['Pogo Hops', 'High Knees'],
-    regressions: ['Step Jacks']
+    progressions: [
+      'High Knees',
+      'Pogo Hops'
+    ],
+    regressions: [
+      'Step Jacks'
+    ]
   },
   {
-    id: '2',
+    id: 'high-knees',
     name: 'High Knees',
     slug: 'high-knees',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Hip Flexors', 'Quadriceps', 'Core'],
+    primaryMuscles: ['Hip Flexors', 'Core', 'Quadriceps', 'Cardiovascular System'],
     image: '/images/exercises/warm-up/high-knees.webp',
-    equipment: 'None',
-    description: 'A high-cadence dynamic drill that activates the hip flexors and core while elevating heart rate and preparing lower body nervous system reactivity.',
+    equipment: 'Bodyweight',
+    description: 'A dynamic running-in-place movement that activates hip flexors, engages the core, and rapidly elevates core body temperature.',
     instructions: [
-      'Stand upright with feet hip-width apart',
-      'Drive one knee upward toward chest height while driving the opposite arm forward in a running motion',
-      'Quickly switch legs, landing softly on the ball of your foot and lifting opposite knee',
-      'Maintain an upright posture and fast cadence throughout'
+      'Stand tall with feet hip-width apart.',
+      'Drive one knee up toward your chest while pumping the opposite arm.',
+      'Quickly switch legs in a running motion, landing softly on the balls of your feet.',
+      'Keep your torso upright and core engaged throughout.'
     ],
     commonMistakes: [
-      'Leaning the torso backward to force knees higher',
-      'Landing on heels instead of staying springy on forefeet',
-      'Driving knees outward instead of straight upward'
+      'Leaning backward during knee drives',
+      'Slumping shoulders forward'
     ],
-    progressions: ['Fast High Knees with Arm Pump'],
-    regressions: ['Marching in Place']
+    progressions: [
+      'Sprinting High Knees'
+    ],
+    regressions: [
+      'Marching in Place'
+    ]
   },
   {
-    id: '3',
+    id: 'butt-kicks',
     name: 'Butt Kicks',
     slug: 'butt-kicks',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Hamstrings', 'Quadriceps', 'Calves'],
+    primaryMuscles: ['Hamstrings', 'Glutes', 'Calves'],
     image: '/images/exercises/warm-up/butt-kicks.webp',
-    equipment: 'None',
-    description: 'A fast-paced running drill emphasizing rapid hamstring contraction and dynamic quadriceps lengthening to prime knees and legs for intense movement.',
+    equipment: 'Bodyweight',
+    description: 'A dynamic running warm-up exercise focusing on hamstring activation and knee flexion mobility.',
     instructions: [
-      'Stand tall with feet hip-width apart and arms bent at 90 degrees',
-      'Flex hamstring rapidly to lift heel straight up to touch your glutes',
-      'Alternate legs quickly in a springy running rhythm, staying light on the balls of your feet',
-      'Keep knees pointing down toward the floor rather than driving forward'
+      'Stand upright with feet hip-width apart.',
+      'Jog in place or move forward while bending your knees to bring your heels up toward your glutes.',
+      'Pump your arms naturally in coordination with your leg movement.',
+      'Keep your thighs relatively vertical and focus on a fast turnover rate.'
     ],
     commonMistakes: [
-      'Driving knees forward into a high knee motion instead of pulling heels straight back',
-      'Hunching upper back forward',
-      'Landing heavily on full foot'
+      'Leaning too far forward',
+      'Failing to bring heels fully up'
     ],
-    progressions: ['High Knees', 'Pogo Hops'],
-    regressions: ['Standing Heel Slides']
+    progressions: [
+      'Fast-paced Butt Kicks'
+    ],
+    regressions: [
+      'Slow Walking Butt Kicks'
+    ]
   },
   {
-    id: '4',
-    name: 'Dynamic Arm Circles and Cross-Hugs',
+    id: 'dynamic-arm-circles-and-cross-hugs',
+    name: 'Dynamic Arm Circles & Cross Hugs',
     slug: 'dynamic-arm-circles-and-cross-hugs',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Shoulders', 'Chest', 'Upper Back'],
+    primaryMuscles: ['Shoulders', 'Chest', 'Upper Back', 'Rotator Cuff'],
     image: '/images/exercises/warm-up/dynamic-arm-circles-and-cross-hugs.webp',
-    equipment: 'None',
-    description: 'A rhythmic upper-body activation drill that lubricates the glenohumeral joint, increases shoulder temperature, and dynamically opens the chest and back.',
+    equipment: 'Bodyweight',
+    description: 'A mobility sequence designed to lubricate the shoulder joints, open the chest, and Warm-Up the upper back.',
     instructions: [
-      'Stand upright with feet shoulder-width apart and extend arms straight out to the sides at shoulder height',
-      'Perform small, controlled forward arm circles, gradually increasing circle size over 10 seconds',
-      'Reverse direction to perform backward circles',
-      'Transition into horizontal arm cross-hugs, swinging arms open to stretch chest and crossing them over front of torso'
+      'Stand with feet shoulder-width apart and arms extended straight out to the sides.',
+      'Perform controlled circular motions with your arms, starting small and gradually increasing the circle size.',
+      'After several rotations, reverse direction.',
+      'Transition into cross hugs by swinging arms wide apart and then crossing them over your chest alternately.'
     ],
     commonMistakes: [
-      'Shrugging shoulders up toward ears during circles',
-      'Arching lower back when opening arms wide',
-      'Moving arms jerkily rather than maintaining fluid momentum'
+      'Performing circles too fast without control',
+      'Shrugging shoulders upward'
     ],
-    progressions: ['Inchworm to Plank'],
-    regressions: ['Seated Arm Circles']
+    progressions: [
+      'Resistance Band Arm Circles'
+    ],
+    regressions: [
+      'Smaller amplitude circles'
+    ]
   },
   {
-    id: '5',
+    id: 'wall-leg-swings',
     name: 'Wall Leg Swings',
     slug: 'wall-leg-swings',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Hips', 'Hamstrings', 'Adductors', 'Glutes'],
+    primaryMuscles: ['Hips', 'Hamstrings', 'Hip Flexors', 'Adductors'],
     image: '/images/exercises/warm-up/wall-leg-swings.webp',
     equipment: 'Wall',
-    description: 'A multi-directional dynamic hip drill using wall support to prime the hip capsule through active sagittal and frontal plane swings.',
+    description: 'A dynamic lower-body mobility drill to loosen the hip joint, hamstrings, and hip flexors before activity.',
     instructions: [
-      'Stand beside a wall and place one hand flat against it for balance',
-      'Swing working leg smoothly forward and backward like a pendulum, letting hamstrings and hip flexors dynamically lengthen',
-      'Face the wall with both palms on it and swing working leg side-to-side across front of body to activate adductors and abductors',
-      'Perform equal reps in both directions before switching legs'
+      'Stand facing a wall and place both hands on the wall for support.',
+      'Shift your weight onto one leg and swing the other leg forward and backward in a controlled pendulum motion.',
+      'After completing front-to-back swings, turn sideways to the wall, hold with one hand, and swing the leg side-to-side across your body.',
+      'Switch sides and repeat.'
     ],
     commonMistakes: [
-      'Excessively arching or rounding lumbar spine to force higher swings',
-      'Bending working knee heavily during sagittal swings',
-      'Moving with rigid force rather than fluid momentum'
+      'Using momentum instead of controlled muscular swing',
+      'Arching lower back during forward swing'
     ],
-    progressions: ['Walking Lunge with Rotation'],
-    regressions: ['Gentle Standing Hip Hinge']
+    progressions: [
+      'Larger amplitude swings without holding wall support'
+    ],
+    regressions: [
+      'Smaller, restricted range of motion swings'
+    ]
   },
   {
-    id: '6',
+    id: 'toy-soldiers',
     name: 'Toy Soldiers',
     slug: 'toy-soldiers',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Hamstrings', 'Hip Flexors', 'Core'],
+    primaryMuscles: ['Hamstrings', 'Core', 'Hip Flexors'],
     image: '/images/exercises/warm-up/toy-soldiers.webp',
-    equipment: 'None',
-    description: 'An upright dynamic movement that actively engages hip flexors and core while dynamically lengthening hamstrings through controlled straight-leg kicks.',
+    equipment: 'Bodyweight',
+    description: 'A dynamic walking stretch that actively lengthens the hamstrings and mobilizes the hip complex.',
     instructions: [
-      'Stand tall with arms extended straight out in front of chest at shoulder height',
-      'Kick one leg straight up forward to touch opposite fingertips with toes, keeping knee locked',
-      'Lower foot back down under control and step forward',
-      'Repeat kick with opposite leg in a controlled walking cadence'
+      'Stand tall with arms extended straight out in front of you at shoulder height, palms facing down.',
+      'Step forward and kick one straight leg up toward the opposite hand while keeping your torso upright.',
+      'Lower the leg with control and step forward into the opposite leg kick.',
+      'Continue alternating legs in a walking motion.'
     ],
     commonMistakes: [
-      'Rounding the chest and reaching down to touch toes instead of kicking foot up',
-      'Bending the kicking knee significantly',
-      'Losing balance by rushing step forward'
+      'Rounding the lower back to reach the foot',
+      'Bending the kicking knee'
     ],
-    progressions: ['Inchworm to Plank'],
-    regressions: ['Stationary Low Kicks']
+    progressions: [
+      'Accelerated Toy Soldier skips'
+    ],
+    regressions: [
+      'Slower, lower-height kicks'
+    ]
   },
   {
-    id: '7',
+    id: 'knee-hug-to-toe-raise',
     name: 'Knee Hug to Toe Raise',
     slug: 'knee-hug-to-toe-raise',
     category: 'Warm-Up',
     difficulty: 'Beginner',
-    primaryMuscles: ['Glutes', 'Calves', 'Core'],
+    primaryMuscles: ['Glutes', 'Calves', 'Hip Flexors', 'Ankle Stabilizers'],
     image: '/images/exercises/warm-up/knee-hug-to-toe-raise.webp',
-    equipment: 'None',
-    description: 'A balance and activation drill that primes single-leg stability, glute engagement, and plantarflexion through the ankles.',
+    equipment: 'Bodyweight',
+    description: 'A combined mobility and activation drill that stretches the glutes/hip flexors and primes the lower calves.',
     instructions: [
-      'Stand tall and pull one knee up toward chest with both hands wrapped around shin',
-      'Squeeze knee firmly to chest while simultaneously rising onto toes of standing foot',
-      'Pause briefly at top of ankle elevation, then release leg and step forward',
-      'Alternate legs in a rhythmic forward walk'
+      'Walk forward, pulling one knee into your chest with both hands while standing tall on the standing leg.',
+      'Release the leg, step down into a stride, and immediately rise up onto your toes (calf raise) before taking the next step.',
+      'Alternate legs continuously with each step forward.'
     ],
     commonMistakes: [
-      'Leaning backwards when hugging knee to chest',
-      'Failing to rise up onto toes of supporting foot',
-      'Losing balance due to rushed execution'
+      'Rushing the balance transition',
+      'Hunching forward when hugging the knee'
     ],
-    progressions: ['Walking Lunge with Rotation'],
-    regressions: ['Stationary Knee Hug (Without Calf Raise)']
+    progressions: [
+      'Adding a single-leg hop at the top of the toe raise'
+    ],
+    regressions: [
+      'Performing the movements separately while stationary holding a wall'
+    ]
   },
   {
-    id: '8',
-    name: 'Inchworm to Plank',
-    slug: 'inchworm-to-plank',
-    category: 'Intermediate',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Core', 'Shoulders', 'Hamstrings'],
-    image: '/images/exercises/warm-up/inchworm-to-plank.webp',
-    equipment: 'Floor',
-    description: 'A dynamic total-body walkout pattern that activates shoulder stabilizers, braces the core, and dynamically lengthens the posterior chain.',
-    instructions: [
-      'Stand tall with feet hip-width apart',
-      'Hinge at hips to touch floor with hands, bending knees slightly if needed',
-      'Walk hands forward one by one until reaching a high plank position with hands under shoulders',
-      'Pause in plank for 1 second with core braced, then walk hands back toward feet and stand tall'
-    ],
-    commonMistakes: [
-      'Sagging hips toward floor during high plank position',
-      'Bending knees excessively during walkout',
-      'Rushing hands backward without maintaining shoulder control'
-    ],
-    progressions: ['Inchworm with Push-Up'],
-    regressions: ['Hand Walkout from Knees']
-  },
-  {
-    id: '9',
-    name: 'World\'s Greatest Stretch (Dynamic)',
-    slug: 'world-s-greatest-stretch-dynamic',
+    id: 'dynamic-squat-to-overhead-reach',
+    name: 'Dynamic Squat to Overhead Reach',
+    slug: 'dynamic-squat-to-overhead-reach',
     category: 'Warm-Up',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Hips', 'Thoracic Spine', 'Glutes', 'Hamstrings'],
-    image: '/images/exercises/warm-up/world-s-greatest-stretch-dynamic.webp',
-    equipment: 'Floor',
-    description: 'The premier dynamic warm-up sequence that simultaneously activates hip flexors, glutes, hamstrings, and thoracic rotation in a single fluid flow.',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Quadriceps', 'Glutes', 'Shoulders', 'Thoracic Spine'],
+    image: '/images/exercises/warm-up/dynamic-squat-to-overhead-reach.webp',
+    equipment: 'Bodyweight',
+    description: 'A multi-joint warm-up movement combining a deep bodyweight squat with an overhead extension to mobilize hips, spine, and shoulders.',
     instructions: [
-      'Step forward into a deep lunge and place both hands flat on floor inside front foot',
-      'Keep back leg straight and glute engaged off floor',
-      'Reach inside elbow down toward front foot instep, then rotate chest open toward front knee and raise arm straight to ceiling',
-      'Return hand to floor, shift hips back to straighten front leg for a quick hamstring stretch, then step forward to repeat on opposite side'
+      'Stand with feet shoulder-width apart.',
+      'Descend into a deep bodyweight squat, keeping your chest up and heels flat.',
+      'Place your elbows inside your knees or reach down to touch your toes briefly, then drive up explosively while extending your arms overhead.',
+      'Return to the starting position and repeat.'
     ],
     commonMistakes: [
-      'Collapsing back knee onto floor',
-      'Twisting at lower back instead of rotating through mid-back (thoracic spine)',
-      'Placing hands outside front foot instead of inside'
+      'Heels lifting off the floor during the squat',
+      'Rushing the full extension phase'
     ],
-    progressions: ['Walking World\'s Greatest Stretch'],
-    regressions: ['Kneeling Dynamic Lunge with Twist']
+    progressions: [
+      'Jump Squat to Overhead Reach'
+    ],
+    regressions: [
+      'Box Squat to Overhead Reach'
+    ]
   },
   {
-    id: '10',
+    id: 'walking-lunge-with-rotation',
     name: 'Walking Lunge with Rotation',
     slug: 'walking-lunge-with-rotation',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
-    primaryMuscles: ['Quadriceps', 'Glutes', 'Core', 'Thoracic Spine'],
+    primaryMuscles: ['Quadriceps', 'Glutes', 'Core', 'Obliques', 'Thoracic Spine'],
     image: '/images/exercises/warm-up/walking-lunge-with-rotation.webp',
-    equipment: 'None',
-    description: 'A dynamic multi-planar lunge pattern that fires up glutes and quads while introducing thoracic rotation to activate core stabilizers.',
+    equipment: 'Bodyweight',
+    description: 'A dynamic lunge variation incorporating torso rotation to activate lower body stability and mobilize the thoracic spine.',
     instructions: [
-      'Step forward into a lunge until both knees reach 90-degree angles',
-      'Extend arms out in front or clasp hands at chest',
-      'Rotate upper torso smoothly over front lead leg, maintaining steady lower body posture',
-      'Rotate back to center, push through front heel to step into next lunge forward'
+      'Step forward into a lunge position, lowering your back knee gently toward the floor.',
+      'As you settle into the lunge, rotate your torso toward the front leg.',
+      'Return your torso to center, push off the front foot, and step directly into the next lunge on the opposite leg.'
     ],
     commonMistakes: [
-      'Allowing front knee to collapse inward during torso rotation',
-      'Rotating torso over trailing leg instead of lead leg',
-      'Leaning torso forward over front thigh'
+      'Front knee collapsing inward',
+      'Rotating too quickly and losing balance'
     ],
-    progressions: ['Walking Lunge with Overhead Reach'],
-    regressions: ['Stationary Lunge with Twist']
+    progressions: [
+      'Adding a light medicine ball or plate twist'
+    ],
+    regressions: [
+      'Stationary lunge with static rotation'
+    ]
   },
   {
-    id: '11',
-    name: 'Dynamic Squat to Overhead Reach',
-    slug: 'dynamic-squat-to-overhead-reach',
-    category: 'Warm-Up',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Quadriceps', 'Glutes', 'Shoulders', 'Thoracic Spine'],
-    image: '/images/exercises/warm-up/dynamic-squat-to-overhead-reach.webp',
-    equipment: 'None',
-    description: 'A full-body mobility and activation drill that primes lower body squatting mechanics while opening the thoracic spine and overhead shoulder girdle.',
-    instructions: [
-      'Stand with feet shoulder-width apart, toes pointed slightly out',
-      'Hinge hips back and descend into a deep squat while reaching hands to grasp toes',
-      'Keep chest up and raise one arm overhead, sweeping eyes toward thumb, then raise opposite arm overhead',
-      'Drive through heels to stand up while keeping arms extended overhead'
-    ],
-    commonMistakes: [
-      'Lifting heels off floor during deep squat descent',
-      'Severe thoracic rounding while trying to reach toes',
-      'Rushing through overhead arm reaches'
-    ],
-    progressions: ['Dynamic Squat Jumps'],
-    regressions: ['Supported Chair Squat with Overhead Reach']
-  },
-  {
-    id: '12',
+    id: 'lateral-shuffle',
     name: 'Lateral Shuffle',
     slug: 'lateral-shuffle',
     category: 'Warm-Up',
-    difficulty: 'Intermediate',
-    primaryMuscles: ['Gluteus Medius', 'Adductors', 'Calves'],
+    difficulty: 'Beginner',
+    primaryMuscles: ['Adductors', 'Abductors', 'Glutes', 'Agility Systems'],
     image: '/images/exercises/warm-up/lateral-shuffle.webp',
-    equipment: 'None',
-    description: 'A frontal-plane movement drill that activates lateral hip stabilizers, primes rapid footwork, and prepares knees for lateral movement.',
+    equipment: 'Bodyweight',
+    description: 'An agility and lateral movement drill designed to prime side-to-side muscle groups and improve multi-directional coordination.',
     instructions: [
-      'Lower into a athletic half-squat stance with feet wider than hip-width and weight on balls of feet',
-      'Quickly push off trailing leg to shuffle laterally without crossing feet over each other',
-      'Keep hips low, knees bent, and torso upright throughout shuffle',
-      'Shuffle 5-10 yards in one direction, then immediately reverse direction'
+      'Assume an athletic quarter-squat stance with feet shoulder-width apart and knees slightly bent.',
+      'Push off your lead foot and shuffle sideways across the floor, bringing your trailing foot to meet your lead foot rapidly.',
+      'Maintain a low athletic center of gravity and avoid crossing your feet.',
+      'Reverse direction after a set distance.'
     ],
     commonMistakes: [
-      'Crossing feet over during shuffle',
-      'Standing up tall instead of staying in athletic low stance',
-      'Letting knees cave inward during push-off'
+      'Crossing feet during the shuffle',
+      'Standing too upright'
     ],
-    progressions: ['Carioca'],
-    regressions: ['Side Step-Taps']
+    progressions: [
+      'Resisted lateral shuffle with band'
+    ],
+    regressions: [
+      'Slow lateral step-outs'
+    ]
   },
   {
-    id: '13',
+    id: 'carioca',
     name: 'Carioca',
     slug: 'carioca',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
-    primaryMuscles: ['Hips', 'Obliques', 'Core'],
+    primaryMuscles: ['Hips', 'Obliques', 'Agility Systems', 'Coordination'],
     image: '/images/exercises/warm-up/carioca.webp',
-    equipment: 'None',
-    description: 'A dynamic transverse-plane warm-up drill that improves hip dissociation, cross-body coordination, and foot quickness.',
+    equipment: 'Bodyweight',
+    description: 'An advanced footwork and agility drill that enhances hip mobility, coordination, and lateral speed.',
     instructions: [
-      'Stand in athletic stance and move sideways to your right',
-      'Cross trailing left leg in front of right leg, step right foot out, then cross left leg behind right leg',
-      'Maintain continuous quick footwork while rotating hips smoothly back and forth',
-      'Keep upper torso facing forward while hips twist, then reverse direction'
+      'Stand sideways and begin moving laterally by stepping your trailing foot alternately behind and then in front of your lead foot.',
+      'Rotate your hips fluidly with each step while keeping your upper body relatively stable and facing forward.',
+      'Maintain a quick, light footwork rhythm across the floor.'
     ],
     commonMistakes: [
-      'Rotating shoulders along with hips instead of keeping chest forward',
-      'Tripping over feet by moving too fast before establishing rhythm',
-      'Staying stiff instead of springy on balls of feet'
+      'Tripping over feet due to rushing',
+      'Stiff hip rotation'
     ],
-    progressions: ['Fast Carioca with High Knee Drive'],
-    regressions: ['Lateral Shuffle']
+    progressions: [
+      'High-speed Carioca with arm drive'
+    ],
+    regressions: [
+      'Slow-motion Carioca step-through'
+    ]
   },
   {
-    id: '14',
+    id: 'pogo-hops',
     name: 'Pogo Hops',
     slug: 'pogo-hops',
     category: 'Warm-Up',
     difficulty: 'Intermediate',
-    primaryMuscles: ['Calves', 'Ankles', 'Quadriceps'],
+    primaryMuscles: ['Calves', 'Ankle Complex', 'Achilles Tendon', 'Elastic Recoil'],
     image: '/images/exercises/warm-up/pogo-hops.webp',
-    equipment: 'None',
-    description: 'A low-amplitude elastic jumping drill designed to stiffen the ankle complex, condition the Achilles tendon, and potentiate the central nervous system.',
+    equipment: 'Bodyweight',
+    description: 'A plyometric spring-loading drill designed to activate the lower leg stiffness, ankle reactivity, and elastic energy storage.',
     instructions: [
-      'Stand tall with feet hip-width apart and knees slightly soft (not locked)',
-      'Perform small, springy vertical hops using primarily ankle extension and calf elasticity',
-      'Minimize ground contact time, bouncing off balls of feet as if landing on hot coals',
-      'Keep torso rigid and hands at waist or swinging gently in rhythm'
+      'Stand tall with hands on your hips or by your sides.',
+      'Perform rapid, small bounces off the balls of your feet, minimizing ground contact time with each hop.',
+      'Keep your legs relatively straight with soft knee bends, utilizing ankle snap and calf elasticity.'
     ],
     commonMistakes: [
-      'Bending knees deeply into a full squat jump',
-      'Landing heavily on heels',
-      'Spending too much time on the ground between bounces'
+      'Bending knees excessively like a squat jump',
+      'Landing heavily on heels'
     ],
-    progressions: ['Single-Leg Pogo Hops'],
-    regressions: ['Low Ankle Bounces']
+    progressions: [
+      'Single-leg Pogo Hops'
+    ],
+    regressions: [
+      'Low-amplitude calf bounces on a soft mat'
+    ]
+  },
+  {
+    id: 'worlds-greatest-stretch-dynamic',
+    name: "World's Greatest Stretch (Dynamic)",
+    slug: 'worlds-greatest-stretch-dynamic',
+    category: 'Warm-Up',
+    difficulty: 'Intermediate',
+    primaryMuscles: ['Hip Flexors', 'Thoracic Spine', 'Hamstrings', 'Groin', 'Core'],
+    image: '/images/exercises/warm-up/worlds-greatest-stretch-dynamic.webp',
+    equipment: 'Bodyweight',
+    description: 'A comprehensive full-body mobility flow targeting the hips, thoracic spine, hamstrings, and groin simultaneously.',
+    instructions: [
+      'Step forward into a long lunge with your right foot, placing your hands on the floor inside your right foot.',
+      'Drop your left knee gently or keep it straight while sinking your hips forward.',
+      'Take your right arm and reach it upward toward the ceiling, rotating your thoracic spine.',
+      'Return your hand to the floor, shift your hips back to stretch your front hamstring, then step forward into the next repetition.'
+    ],
+    commonMistakes: [
+      'Rushing through the transitions',
+      'Failing to rotate from the upper back'
+    ],
+    progressions: [
+      'Adding an overhead reach at the top of the lunge'
+    ],
+    regressions: [
+      'Kneeling variation with modified reach'
+    ]
+  },
+  {
+    id: 'inchworm-to-plank',
+    name: 'Inchworm to Plank',
+    slug: 'inchworm-to-plank',
+    category: 'Warm-Up',
+    difficulty: 'Beginner',
+    primaryMuscles: ['Core', 'Hamstrings', 'Shoulders', 'Chest'],
+    image: '/images/exercises/warm-up/inchworm-to-plank.webp',
+    equipment: 'Bodyweight',
+    description: 'A dynamic flexibility and core strength exercise that actively stretches the hamstrings and engages the shoulder girdle.',
+    instructions: [
+      'Stand with feet hip-width apart, hinge at your hips, and place your hands on the floor (bending knees slightly if needed).',
+      'Walk your hands forward incrementally until your body forms a stable high plank position.',
+      'Hold the plank for a brief moment, then walk your feet forward toward your hands or walk your hands back to return to standing.'
+    ],
+    commonMistakes: [
+      'Sagging hips when reaching the plank position',
+      'Bending elbows prematurely'
+    ],
+    progressions: [
+      'Adding a push-up at the bottom of the plank'
+    ],
+    regressions: [
+      'Inchworm stopping at an elevated incline surface'
+    ]
   }
 ];
